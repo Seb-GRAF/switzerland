@@ -12,6 +12,15 @@ const App = () => {
     const scroll = new LocomotiveScroll({
       el: scrollRef.current,
       smooth: true,
+      inertia: 0.5,
+      mobile: {
+        smooth: true,
+        inertia: 0.5,
+      },
+      tablet: {
+        smooth: true,
+        inertia: 0.5,
+      },
     });
   }, []);
 
