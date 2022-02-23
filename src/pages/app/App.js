@@ -14,10 +14,12 @@ const App = () => {
       smooth: true,
       inertia: 0.5,
       mobile: {
+        breakpoint: 0,
         smooth: true,
         inertia: 0.5,
       },
       tablet: {
+        breakpoint: 0,
         smooth: true,
         inertia: 0.5,
       },
