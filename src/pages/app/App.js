@@ -12,16 +12,16 @@ const App = () => {
     const scroll = new LocomotiveScroll({
       el: scrollRef.current,
       smooth: true,
-      inertia: 0.5,
+      inertia: 0.9,
       mobile: {
         breakpoint: 0,
         smooth: true,
-        inertia: 0.5,
+        inertia: 0.9,
       },
       tablet: {
         breakpoint: 0,
         smooth: true,
-        inertia: 0.5,
+        inertia: 0.9,
       },
     });
   }, []);

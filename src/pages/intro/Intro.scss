@@ -5,18 +5,19 @@
   width: 100%;
   img {
     min-height: 120%;
-    max-width: 120%;
+    max-width: 250%;
+    // min-width: 100%;
     object-fit: cover;
-    filter: grayscale(0.6);
+    filter: sepia(0.6);
     transition: filter 2s, min-height 2s ease-in-out;
     &:hover {
-      filter: grayscale(0.3);
+      filter: sepia(0.3);
       //   min-height: 130%;
     }
   }
 }
 .title {
-  padding-block: clamp(5rem, 20vw, 15rem);
+  padding-block: clamp(8rem, 20vw, 15rem);
   width: 100%;
   background-color: #1f3044;
   display: flex;
@@ -32,7 +33,14 @@
   }
 }
 .intro__image {
-  height: clamp(2rem, 60vw, 60rem);
+  height: clamp(25rem, 60vw, 60rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-width: 140%;
+    min-height: 160%;
+  }
 }
 .text__section {
   box-sizing: border-box;
@@ -49,20 +57,20 @@
   z-index: 100;
 }
 .description {
-  z-index: 100;
-  height: 100vh;
+  //   height: 100vh;
   background-color: #ffffff;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
   .left {
     box-sizing: border-box;
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-inline: clamp(1rem, 6vw, 10rem);
+    padding-inline: clamp(1rem, 9vw, 10rem);
     p {
       max-width: 100%;
       margin: 0;
@@ -70,16 +78,13 @@
     }
   }
   .right {
-    height: 100%;
+    max-height: 50rem;
     width: 50%;
     object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    // img {
-    //   height: 140%;
-    // }
   }
 }
 .divider {
@@ -87,10 +92,41 @@
   box-sizing: border-box;
   background-color: #f7f7f7;
   width: 100%;
-  height: 50rem;
-  padding: clamp(1rem, 8vw, 10rem);
+  height: clamp(50rem, 60vw, 70rem);
+  padding: clamp(3rem, 8vw, 10rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .divider__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .description {
+    flex-direction: column-reverse;
+    &:nth-child(2n) {
+      flex-direction: column;
+    }
+    .right {
+      width: 100%;
+      max-height: 40rem;
+    }
+    .left {
+      width: 100%;
+      padding: clamp(3rem, 8vw, 10rem);
+      height: auto;
+    }
+  }
+  .divider {
+    height: 100vw;
+    .divider__image {
+      align-items: center;
+    }
   }
 }
