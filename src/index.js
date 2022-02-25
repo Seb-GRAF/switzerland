@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./pages/app/App";
+import App from "./pages/app/app";
 import "locomotive-scroll/src/locomotive-scroll.scss";
 
 ReactDOM.render(
