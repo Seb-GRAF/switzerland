@@ -6,8 +6,6 @@ const useLocomotiveScroll = () => {
     new LocomotiveScroll({
       el: document.querySelector("#app"),
       smooth: true,
-      inertia: 0.9,
-      multiplier: 0.5,
       mobile: {
         breakpoint: 0,
         smooth: true,

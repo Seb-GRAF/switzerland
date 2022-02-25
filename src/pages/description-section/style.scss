@@ -54,17 +54,16 @@ img {
 }
 
 @media (max-width: 800px) {
-  .description {
+  .description__section {
     flex-direction: column-reverse;
-    &:nth-child(2n),
-    &:nth-child(4n) {
-      flex-direction: column;
+    &:nth-child(even) {
+      flex-direction: column-reverse;
     }
-    .right {
+    .description__image {
       width: 100%;
       max-height: 40rem;
     }
-    .left {
+    .description__text {
       width: 100%;
       padding: clamp(3rem, 8vw, 10rem);
       height: auto;
