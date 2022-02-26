@@ -9,7 +9,7 @@ const useLocomotiveScroll = (start) => {
       el: document.querySelector("#app"),
       smooth: true,
       inertia: 0.6,
-      touchMultiplier: 1,
+      // touchMultiplier: 1,
       multiplier: 1,
       getDirection: true,
       mobile: {

@@ -58,6 +58,7 @@
 
 @media (max-width: 1024px) {
   .description__section {
+    height: auto;
     flex-direction: column;
     .description__image {
       width: 100%;
@@ -80,5 +81,8 @@
     &:nth-child(3n) {
       height: 50rem;
     }
+    // &:nth-child(5n) {
+    //   height: 50rem;
+    // }
   }
 }
