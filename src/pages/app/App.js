@@ -33,7 +33,7 @@ const App = () => {
       <Nav />
       <AnimatePresence exitBeforeEnter>
         <Routes key={location.pathname} location={location}>
-          <Route path="/intro" element={<Intro />} />
+          <Route path="/" element={<Intro />} />
           <Route path="/cities" element={<Cities />} />
         </Routes>
       </AnimatePresence>

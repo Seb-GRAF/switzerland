@@ -5,7 +5,7 @@ import "./style.scss";
 const Nav = () => {
   return (
     <nav className="nav">
-      <Link to="/intro">
+      <Link to="/">
         <p>Switzerland</p>
       </Link>
       <Link to="/cities">

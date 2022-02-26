@@ -1,4 +1,7 @@
 .title {
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
   padding-block: clamp(8rem, 20vw, 15rem);
   width: 100%;
   background-color: #2d3136;
@@ -11,5 +14,13 @@
 
   h1 {
     font-size: 10vw;
+  }
+  &:after {
+    content: "↓";
+    font-size: 2rem;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
