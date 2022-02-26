@@ -1,4 +1,4 @@
-.intro {
+.cities {
   width: 100%;
   overflow-x: hidden;
   display: flex;
@@ -9,5 +9,15 @@
     min-height: 120%;
     object-fit: cover;
     filter: sepia(0.1);
+  }
+  .text__wrapper {
+    box-sizing: border-box;
+    padding: 5rem;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+  }
+  p {
+    margin-bottom: 5rem;
   }
 }

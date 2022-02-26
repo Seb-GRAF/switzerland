@@ -8,8 +8,7 @@ const useLocomotiveScroll = (start) => {
     const loco = new LocomotiveScroll({
       el: document.querySelector("#app"),
       smooth: true,
-      inertia: 0.6,
-      // touchMultiplier: 1,
+      touchMultiplier: 2,
       multiplier: 1,
       getDirection: true,
       mobile: {
@@ -28,9 +27,10 @@ const useLocomotiveScroll = (start) => {
     });
 
     function locomotiveHeightBug() {
+      console.log("loco updated");
       loco.update();
     }
-    setTimeout(locomotiveHeightBug, 900);
+    setTimeout(locomotiveHeightBug, 200);
   });
 };
 export default useLocomotiveScroll;

@@ -1,0 +1,15 @@
+.title {
+  padding-block: clamp(8rem, 20vw, 15rem);
+  width: 100%;
+  background-color: #2d3136;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #e2e5eb;
+  z-index: 100;
+
+  h1 {
+    font-size: 10vw;
+  }
+}

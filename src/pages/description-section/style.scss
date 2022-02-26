@@ -38,9 +38,9 @@
     align-items: center;
     overflow: hidden;
     img {
-      min-width: 100%;
-      // max-width: 190%;
-      min-height: 130%;
+      // min-width: 100%;
+      max-width: 190%;
+      max-height: 120%;
       // object-fit: fill;
       filter: sepia(0.1);
     }
@@ -59,15 +59,16 @@
 @media (max-width: 1024px) {
   .description__section {
     height: auto;
+    flex: 1;
     flex-direction: column;
     .description__image {
       width: 100%;
-      height: clamp(20rem, 50vw, 30rem);
+      min-height: 20rem;
+      max-height: 30rem;
     }
     .description__text {
       width: 100%;
       padding: clamp(3rem, 8vw, 10rem);
-      height: auto;
     }
     &:nth-child(even) {
       flex-direction: column;
@@ -75,14 +76,5 @@
     &:nth-child(1n) {
       flex-direction: column-reverse;
     }
-    &:nth-child(2n) {
-      height: 50rem;
-    }
-    &:nth-child(3n) {
-      height: 50rem;
-    }
-    // &:nth-child(5n) {
-    //   height: 50rem;
-    // }
   }
 }

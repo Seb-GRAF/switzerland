@@ -9,11 +9,14 @@ const DividerLarge = ({ img }) => {
   );
 };
 
-const DividerSmall = ({ img }) => {
+const DividerSmall = ({ img, source }) => {
   return (
-    <div className="divider__small">
-      <div className="divider__image" data-scroll>
+    <div className="divider__small" data-scroll>
+      <div className="divider__image">
         <img src={img} data-scroll data-scroll-speed="-3" />
+      </div>
+      <div className="divider__source">
+        <p>{source}</p>
       </div>
     </div>
   );
