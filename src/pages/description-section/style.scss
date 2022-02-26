@@ -1,72 +1,84 @@
-img {
-  width: 250%;
-  min-height: 120%;
-  object-fit: cover;
-  filter: sepia(0.1);
-}
-
 .description__section {
   background-color: #ffffff;
   width: 100%;
+  height: 50rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   z-index: 100;
   .description__text {
+    background-color: #ffffff;
     box-sizing: border-box;
     width: 50%;
     display: flex;
+    flex: 1;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
     padding-inline: clamp(1rem, 9vw, 10rem);
     clip-path: inset(0% 0% 100% 0%);
-    transition: clip-path 2s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: clip-path 2s ease-in-out;
     &.is-inview {
       clip-path: inset(0% 0% 0% 0%);
     }
     p {
       max-width: 100%;
       margin: 0;
-      text-indent: 5rem;
+      text-indent: 3rem;
     }
   }
   .description__image {
-    max-height: 50rem;
     width: 50%;
-    object-fit: cover;
+    height: 100%;
+    // object-fit: contain;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     img {
-      clip-path: inset(0% 0% 100% 0%);
-      transition: clip-path 2s cubic-bezier(0.77, 0, 0.175, 1);
-
-      &.is-inview {
-        clip-path: inset(0% 0% 0% 0%);
-      }
+      min-width: 100%;
+      // max-width: 190%;
+      min-height: 130%;
+      // object-fit: fill;
+      filter: sepia(0.1);
     }
   }
   &:nth-child(even) {
     flex-direction: row-reverse;
   }
+  &:nth-child(2n) {
+    height: 40rem;
+  }
+  &:nth-child(3n) {
+    height: 30rem;
+  }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .description__section {
-    flex-direction: column-reverse;
-    &:nth-child(even) {
-      flex-direction: column-reverse;
-    }
+    flex-direction: column;
     .description__image {
       width: 100%;
-      max-height: 40rem;
+      height: clamp(20rem, 50vw, 30rem);
     }
     .description__text {
       width: 100%;
       padding: clamp(3rem, 8vw, 10rem);
       height: auto;
+    }
+    &:nth-child(even) {
+      flex-direction: column;
+    }
+    &:nth-child(1n) {
+      flex-direction: column-reverse;
+    }
+    &:nth-child(2n) {
+      height: 50rem;
+    }
+    &:nth-child(3n) {
+      height: 50rem;
     }
   }
 }

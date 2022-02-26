@@ -1,18 +1,18 @@
 img {
-  width: 250%;
-  min-height: 120%;
+  width: 100%;
+  min-height: 100%;
   object-fit: cover;
   filter: sepia(0.1);
 }
 
 .divider__large {
-  height: clamp(25rem, 60vw, 60rem);
+  height: clamp(30rem, 60vw, 60rem);
   display: flex;
   justify-content: center;
   align-items: center;
   img {
     max-width: 140%;
-    min-height: 160%;
+    max-height: 120%;
   }
 }
 .divider__small {
@@ -21,7 +21,7 @@ img {
   background-color: #f7f7f7;
   width: 100%;
   height: clamp(50rem, 60vw, 70rem);
-  padding: clamp(3rem, 8vw, 10rem);
+  padding: clamp(3rem, 12vw, 10rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +32,18 @@ img {
     overflow: hidden;
     height: 100%;
     width: 100%;
+    clip-path: inset(100% 0% 0% 0%);
+    transition: clip-path 2s cubic-bezier(0.7, 0, 0.175, 1);
+    img {
+      transition: min-width 4s ease;
+      min-width: 300%;
+    }
+    &.is-inview {
+      clip-path: inset(0% 0% 0% 0%);
+      img {
+        min-width: 250%;
+      }
+    }
   }
 }
 
@@ -53,7 +65,7 @@ img {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .divider__small {
     height: 100vw;
     .divider__image {
