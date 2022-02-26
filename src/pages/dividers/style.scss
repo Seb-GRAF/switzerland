@@ -13,7 +13,7 @@
   box-sizing: border-box;
   background-color: #f7f7f7;
   width: 100%;
-  height: clamp(50rem, 60vw, 70rem);
+  min-height: 40rem;
   padding: clamp(3rem, 12vw, 10rem);
   padding-right: clamp(2rem, 8vw, 10rem);
   display: flex;
@@ -31,10 +31,11 @@
     img {
       transition: min-width 4s ease-out;
       min-width: 140%;
+      min-height: 120%;
     }
   }
   .divider__source {
-    height: 100%;
+    min-height: 100%;
     display: flex;
     align-items: flex-end;
     clip-path: inset(100% 0% 0% 0%);
@@ -78,7 +79,7 @@
 
 @media (max-width: 1024px) {
   .divider__small {
-    // height: 100vw;
+    height: 30rem;
     .divider__image {
       align-items: center;
     }

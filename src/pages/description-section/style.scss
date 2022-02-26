@@ -63,12 +63,12 @@
     flex-direction: column;
     .description__image {
       width: 100%;
-      min-height: 20rem;
-      max-height: 30rem;
+      height: 30rem;
     }
     .description__text {
       width: 100%;
       padding: clamp(3rem, 8vw, 10rem);
+      flex: 1;
     }
     &:nth-child(even) {
       flex-direction: column;

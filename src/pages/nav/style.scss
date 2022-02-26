@@ -8,8 +8,7 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  transition: transform 1s cubic-bezier(0.7, 0, 0.175, 1),
-    box-shadow 1s cubic-bezier(0.7, 0, 0.175, 1);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.7, 0, 0.175, 1);
   background-color: #2d3136;
 
   a {

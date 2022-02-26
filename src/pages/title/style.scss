@@ -1,8 +1,10 @@
 .title {
   position: relative;
   box-sizing: border-box;
-  height: 100vh;
-  padding-block: clamp(8rem, 20vw, 15rem);
+  min-height: 100vh;
+  padding-top: clamp(2rem, 10vw, 8rem);
+  padding-bottom: clamp(8rem, 20vw, 15rem);
+
   width: 100%;
   background-color: #2d3136;
   display: flex;
@@ -15,12 +17,11 @@
   h1 {
     font-size: 10vw;
   }
-  &:after {
-    content: "↓";
+  p {
+    margin: 0;
     font-size: 2rem;
     position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 25%;
+    transition: 2s;
   }
 }
