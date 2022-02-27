@@ -3,17 +3,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
-    max-width: 140%;
-    max-height: 120%;
-  }
+  width: 100%;
+  // img {
+  //   width: 100%;
+  // }
 }
 .divider__small {
   z-index: 100;
   box-sizing: border-box;
   background-color: #f7f7f7;
   width: 100%;
-  min-height: 40rem;
+  height: 60rem;
   padding: clamp(3rem, 12vw, 10rem);
   display: flex;
   justify-content: center;
@@ -28,9 +28,6 @@
     clip-path: inset(100% 0% 0% 0%);
     transition: clip-path 2s cubic-bezier(0.7, 0, 0.175, 1);
     img {
-      transition: min-width 4s ease-out;
-      min-width: 120%;
-      min-height: 120%;
     }
   }
   &.is-inview {
@@ -67,7 +64,7 @@
 
 @media (max-width: 1024px) {
   .divider__small {
-    height: 30rem;
+    height: 100vw;
     .divider__image {
       align-items: center;
     }

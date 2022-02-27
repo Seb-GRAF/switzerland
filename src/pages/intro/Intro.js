@@ -31,7 +31,7 @@ const Intro = () => {
       if (e.direction === "down") nav.className = "nav__hidden";
     });
     const locomotiveUpdate = () => loco.update();
-    setTimeout(locomotiveUpdate, 1000);
+    setTimeout(locomotiveUpdate, 1200);
     return () => {
       loco.destroy();
     };

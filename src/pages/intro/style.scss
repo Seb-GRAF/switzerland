@@ -5,9 +5,17 @@
   flex-direction: column;
   box-sizing: border-box;
   img {
-    width: 250%;
-    min-height: 120%;
-    object-fit: cover;
-    filter: sepia(0.1);
+    // width: 100%;
+    height: 140%;
+    // max-height: 140%;
+    filter: sepia(0.2);
+  }
+}
+@media (max-width: 1024px) {
+  .intro {
+    img {
+      // max-height: 200%;
+      // min-width: 100%;
+    }
   }
 }
