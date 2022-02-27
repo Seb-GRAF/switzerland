@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/switzerland/static/css/main.81dfc611.css",
-    "main.js": "/switzerland/static/js/main.3e58e40a.js",
+    "main.css": "/switzerland/static/css/main.ae06c18a.css",
+    "main.js": "/switzerland/static/js/main.c7e0b99b.js",
     "static/media/intro2.jpg": "/switzerland/static/media/intro2.112a8b2efb0cad245b10.jpg",
     "static/media/intro4.jpg": "/switzerland/static/media/intro4.ef2ba1ad008b4d6ebd91.jpg",
     "static/media/intro3.jpg": "/switzerland/static/media/intro3.9f744e7d0437aedfeeb8.jpg",
@@ -11,11 +11,11 @@
     "static/media/intro8.jpg": "/switzerland/static/media/intro8.ac6cf74b0e0453a1466f.jpg",
     "static/media/intro6.jpg": "/switzerland/static/media/intro6.93c8e2e79d40fbbbe4da.jpg",
     "index.html": "/switzerland/index.html",
-    "main.81dfc611.css.map": "/switzerland/static/css/main.81dfc611.css.map",
-    "main.3e58e40a.js.map": "/switzerland/static/js/main.3e58e40a.js.map"
+    "main.ae06c18a.css.map": "/switzerland/static/css/main.ae06c18a.css.map",
+    "main.c7e0b99b.js.map": "/switzerland/static/js/main.c7e0b99b.js.map"
   },
   "entrypoints": [
-    "static/css/main.81dfc611.css",
-    "static/js/main.3e58e40a.js"
+    "static/css/main.ae06c18a.css",
+    "static/js/main.c7e0b99b.js"
   ]
 }
