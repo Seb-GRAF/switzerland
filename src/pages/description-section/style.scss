@@ -1,93 +1,57 @@
 .description__section {
-  background-color: #ffffff;
   width: 100%;
-  height: 50rem;
+  background-color: #ffffff;
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 200;
   .description__text {
-    background-color: #ffffff;
+    width: 100%;
     box-sizing: border-box;
-    width: 50%;
+    // background-color: #f58787;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     padding-inline: clamp(1rem, 9vw, 10rem);
+    padding-block: clamp(1rem, 9vw, 10rem);
     clip-path: inset(0% 0% 100% 0%);
-    transition: clip-path 2s ease-in-out;
+    transition: clip-path 1s ease-in-out;
     &.is-inview {
       clip-path: inset(0% 0% 0% 0%);
     }
     p {
-      max-width: 100%;
-      margin: 0;
       text-indent: 3rem;
     }
   }
   .description__image {
-    height: 100%;
-    width: 50%;
+    overflow: hidden;
+    width: 100%;
+    height: 30rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    // img {
-    //   height: 140%;
-    // }
-  }
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-  &:nth-child(2n) {
-    height: 40rem;
-  }
-  &:nth-child(3n) {
-    height: 30rem;
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .description__section {
-    height: auto;
-    flex: 1;
-    flex-direction: column;
-    .description__image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 30rem;
-      width: 100%;
-      img {
-        // width: auto;
-        height: 140%;
-      }
-    }
+    width: 100%;
+    flex-direction: row;
     .description__text {
-      height: auto;
-      width: 100%;
-      padding-inline: clamp(3rem, 8vw, 10rem);
-      padding-block: clamp(4rem, 20vw, 8rem);
-      flex: 1;
+      width: 50%;
+      height: 100%;
+      padding-block: 0;
+    }
+    .description__image {
+      width: 50%;
+      height: 40rem;
+      display: flex;
     }
     &:nth-child(even) {
-      flex-direction: column;
-    }
-    &:nth-child(1n) {
-      flex-direction: column-reverse;
-    }
-  }
-}
-@media (max-width: 700px) {
-  .description__section {
-    .description__image {
-      height: 80vw;
-      img {
-        height: 180%;
-      }
+      flex-direction: row-reverse;
     }
   }
 }

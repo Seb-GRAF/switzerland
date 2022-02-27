@@ -104,10 +104,10 @@ const Intro = () => {
         </DescriptionSection>
         <DescriptionSection img={require("../../assets/photos/intro7.jpg")}>
           <p>
-            Most of the major cultural regions of western continental
-            Europe—German, French, and Italian—come into contact in Switzerland.
-            Thus, one of the country’s distinctive features is the variety of
-            its languages.
+            Most of the major cultural regions of western continental Europe
+            (German, French, and Italian) into contact in Switzerland. Thus, one
+            of the country’s distinctive features is the variety of its
+            languages.
           </p>
           <p>
             The Swiss constitution has German, French, and Italian as official
