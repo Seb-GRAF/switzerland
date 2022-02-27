@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  overflow: hidden;
   // img {
   //   width: 100%;
   // }
@@ -39,6 +40,7 @@
 }
 
 .text__divider {
+  z-index: 100;
   box-sizing: border-box;
   padding-block: clamp(5rem, 20vw, 10rem);
   padding-inline: clamp(1rem, 6vw, 10rem);
@@ -50,16 +52,39 @@
   align-items: center;
   gap: 2rem;
   text-align: center;
-  z-index: 100;
-  h1 {
-    font-size: clamp(2rem, 4vw, 4rem);
+  .text__wrapper {
+    overflow: hidden;
+    h1,
+    h2 {
+      transition: transform 1s cubic-bezier(0.7, 0, 0.175, 1);
+      transform: translateY(100%);
+    }
+    h1 {
+      font-size: clamp(2rem, 4vw, 4rem);
+    }
+    h2 {
+      max-width: clamp(30rem, 70vw, 70rem);
+      font-size: clamp(1rem, 2vw, 2rem);
+      transform: translateY(100%);
+      transition-delay: 300ms;
+    }
   }
-  h2 {
-    max-width: clamp(30rem, 70vw, 70rem);
-    font-size: clamp(1rem, 2vw, 2rem);
+  &.is-inview {
+    h1,
+    h2 {
+      transform: translateY(0);
+    }
   }
 }
-
+.next__page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  color: #2d3136;
+  text-decoration: none;
+  background-color: #f7f7f7;
+}
 @media (max-width: 1024px) {
   .divider__small {
     height: 100vw;

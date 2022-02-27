@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import useLocomotiveScroll from "../../hooks/useLocoScroll";
+import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Nav from "../nav/nav";
 import Cities from "../cities/cities";
+import Geneva from "../geneva/geneva";
+import Zurich from "../zurich/zurich";
 import Intro from "../intro/intro";
 import "./style.scss";
 import { AnimatePresence } from "framer-motion";
@@ -35,10 +36,11 @@ const App = () => {
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<Intro />} />
           <Route path="/cities" element={<Cities />} />
+          <Route path="/geneva" element={<Geneva />} />
+          <Route path="/zurich" element={<Zurich />} />
         </Routes>
       </AnimatePresence>
     </div>
-    // </HashRouter>
   );
 };
 

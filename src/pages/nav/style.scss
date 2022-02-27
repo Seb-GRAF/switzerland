@@ -15,6 +15,10 @@ nav {
     font-size: clamp(1rem, 3vw, 1.5rem);
     text-decoration: none;
     color: white;
+    margin: 0;
+    p {
+      margin: 0;
+    }
   }
 }
 nav.nav__active {

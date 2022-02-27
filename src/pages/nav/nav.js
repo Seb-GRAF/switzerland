@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <nav className="nav">
       <Link to="/">
-        <p>Switzerland</p>
+        <p>Discover Switzerland</p>
       </Link>
       <Link to="/cities">
         <p>Cities</p>

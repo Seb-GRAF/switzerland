@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
-import { DividerLarge, DividerSmall, TextDivider } from "../dividers/dividers";
+import {
+  DividerLarge,
+  DividerSmall,
+  TextDivider,
+  NextPage,
+} from "../dividers/dividers";
 import DescriptionSection from "../description-section/description-section";
 import LocomotiveScroll from "locomotive-scroll";
-
 import "./style.scss";
 
 import Title from "../title/title";
@@ -31,7 +35,7 @@ const Intro = () => {
       if (e.direction === "down") nav.className = "nav__hidden";
     });
     const locomotiveUpdate = () => loco.update();
-    setTimeout(locomotiveUpdate, 1200);
+    setTimeout(locomotiveUpdate, 200);
     return () => {
       loco.destroy();
     };
@@ -40,17 +44,12 @@ const Intro = () => {
   return (
     <AnimatedPage>
       <section className="intro" data-scroll-section>
-        <Title>
-          <h1>SWITZERLAND</h1>
-          <h2>Unus pro omnibus, omnes pro uno</h2>
-        </Title>
+        <Title
+          title={"switzerland"}
+          subtitle="Unus pro omnibus, omnes pro uno"
+        />
         <DividerLarge img={require("../../assets/photos/intro1.jpg")} />
-        <TextDivider>
-          <h1>
-            A landlocked country, filled with giant mountains, deep Alpine lakes
-            and grasses valleys.
-          </h1>
-        </TextDivider>
+        <TextDivider title="A landlocked country, filled with giant mountains, deep Alpine lakes and grassey valleys."></TextDivider>
         <DescriptionSection img={require("../../assets/photos/intro2.jpg")}>
           <p>
             Switzerland is a small mountainous country located in central
@@ -71,14 +70,14 @@ const Intro = () => {
         </DescriptionSection>
         <DividerSmall img={require("../../assets/photos/intro3.jpg")} />
         <DividerLarge img={require("../../assets/photos/intro4.jpg")} />
-        <TextDivider>
-          <h1>Unus pro omnibus, omnes pro uno</h1>
-          <h2>
-            <i>Unus pro omnibus, omnes pro uno</i> is a Latin phrase that means
-            One for all, all for one. It is the unofficial motto of Switzerland.
-          </h2>
-        </TextDivider>
-        <DescriptionSection img={require("../../assets/photos/intro5.jpg")}>
+        <TextDivider
+          title="Unus pro omnibus, omnes pro uno"
+          subtitle='Unus pro omnibus, omnes pro uno is a Latin phrase that means "One for all, all for one". It is the unofficial motto of Switzerland.'
+        ></TextDivider>
+        <DescriptionSection
+          size="medium"
+          img={require("../../assets/photos/intro5.jpg")}
+        >
           <p>
             For many outsiders, Switzerland evokes a prosperous if rather staid
             and unexciting society, an image that is now dated. Switzerland
@@ -91,7 +90,10 @@ const Intro = () => {
             you can see in the pictures above.
           </p>
         </DescriptionSection>
-        <DescriptionSection img={require("../../assets/photos/intro6.jpg")}>
+        <DescriptionSection
+          size="small"
+          img={require("../../assets/photos/intro6.jpg")}
+        >
           <p>
             Switzerland is divided into 26 different areas called cantons. A
             canton is similar to a state in the United States.
@@ -117,7 +119,10 @@ const Intro = () => {
             designated as an official “national” language in 1938).
           </p>
         </DescriptionSection>
-        <DescriptionSection img={require("../../assets/photos/intro8.jpg")}>
+        <DescriptionSection
+          size="big"
+          img={require("../../assets/photos/intro8.jpg")}
+        >
           <p>
             As a country where diverse traditions and cultures meet and
             interact, Switzerland has been a melting-pot in the heart of Europe
@@ -137,6 +142,7 @@ const Intro = () => {
             supported with federal funds.
           </p>
         </DescriptionSection>
+        <NextPage link="/cities" />
       </section>
     </AnimatedPage>
   );

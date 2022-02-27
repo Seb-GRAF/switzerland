@@ -1,13 +1,9 @@
 .cities {
-  overflow: hidden;
   width: 100%;
-  //   min-height: 40rem;
-  max-height: 100vh;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  .title {
-    height: 100vh;
-  }
+  background-color: white;
+  height: 400rem;
 }
