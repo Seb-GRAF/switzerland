@@ -31,7 +31,7 @@ const Intro = () => {
       if (e.direction === "down") nav.className = "nav__hidden";
     });
     const locomotiveUpdate = () => loco.update();
-    setTimeout(locomotiveUpdate, 1200);
+    setTimeout(locomotiveUpdate, 1000);
     return () => {
       loco.destroy();
     };
@@ -69,13 +69,14 @@ const Intro = () => {
             the different regions (cantons) of the country.
           </p>
         </DescriptionSection>
-        <DividerSmall
-          img={require("../../assets/photos/intro3.jpg")}
-          source={"Kandersteg, Bern"}
-        />
+        <DividerSmall img={require("../../assets/photos/intro3.jpg")} />
         <DividerLarge img={require("../../assets/photos/intro4.jpg")} />
         <TextDivider>
-          <h1>welcome to 🇨🇭</h1>
+          <h1>Unus pro omnibus, omnes pro uno</h1>
+          <h2>
+            <i>Unus pro omnibus, omnes pro uno</i> is a Latin phrase that means
+            One for all, all for one. It is the unofficial motto of Switzerland.
+          </h2>
         </TextDivider>
         <DescriptionSection img={require("../../assets/photos/intro5.jpg")}>
           <p>

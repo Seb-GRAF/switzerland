@@ -15,9 +15,6 @@ const DividerSmall = ({ img, source }) => {
       <div className="divider__image">
         <img src={img} data-scroll data-scroll-speed="-3" />
       </div>
-      <div className="divider__source">
-        <p>{source}</p>
-      </div>
     </div>
   );
 };

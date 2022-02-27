@@ -1,10 +1,9 @@
 .title {
   position: relative;
   box-sizing: border-box;
-  min-height: 100vh;
-  padding-top: clamp(2rem, 10vw, 8rem);
+  min-height: 60vh;
+  padding-top: clamp(4rem, 10vw, 10rem);
   padding-bottom: clamp(8rem, 20vw, 15rem);
-
   width: 100%;
   background-color: #2d3136;
   display: flex;
@@ -13,6 +12,7 @@
   align-items: center;
   color: #e2e5eb;
   z-index: 100;
+  animation: scaleDown 2s cubic-bezier(0.7, 0, 0.175, 1);
 
   h1 {
     font-size: 10vw;
@@ -21,7 +21,29 @@
     margin: 0;
     font-size: 2rem;
     position: absolute;
-    bottom: 25%;
-    transition: 2s;
+    bottom: 15%;
+    animation: bounce 4s infinite;
+  }
+}
+@keyframes scaleDown {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(50%);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

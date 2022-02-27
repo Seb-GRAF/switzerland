@@ -36,8 +36,8 @@
     align-items: center;
     overflow: hidden;
     img {
-      // max-width: 190%;
-      min-height: 120%;
+      min-width: 100%;
+      height: 140%;
       filter: sepia(0.1);
     }
   }
@@ -60,10 +60,14 @@
     min-height: 30rem;
     flex-direction: column;
     .description__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       max-height: 20rem;
       width: 100%;
       img {
-        // max-width: 120%;
+        min-width: auto;
+        height: auto;
       }
     }
     .description__text {
