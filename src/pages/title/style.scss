@@ -12,7 +12,7 @@
   align-items: center;
   color: #e2e5eb;
   z-index: 100;
-  animation: scaleDown 2s cubic-bezier(0.7, 0, 0.175, 1);
+  animation: scaleDown 4s cubic-bezier(0.7, 0, 0.175, 1);
 
   h1 {
     font-size: 10vw;
@@ -22,14 +22,14 @@
     font-size: 2rem;
     position: absolute;
     bottom: 15%;
-    animation: bounce 4s infinite;
+    animation: bounce 3s infinite;
   }
 }
 @keyframes scaleDown {
-  from {
+  0% {
     transform: scale(2);
   }
-  to {
+  100% {
     transform: scale(1);
   }
 }
