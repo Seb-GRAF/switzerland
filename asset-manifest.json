@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/switzerland/static/css/main.8a4d9700.css",
-    "main.js": "/switzerland/static/js/main.d296ea22.js",
+    "main.css": "/switzerland/static/css/main.d5ff5e1c.css",
+    "main.js": "/switzerland/static/js/main.6d0978a7.js",
     "static/media/1.jpg": "/switzerland/static/media/1.ee75108522cbd37d21ed.jpg",
     "static/media/intro2.jpg": "/switzerland/static/media/intro2.112a8b2efb0cad245b10.jpg",
     "static/media/5.jpg": "/switzerland/static/media/5.f0acc21b7535be9a4ea3.jpg",
     "static/media/intro3.jpg": "/switzerland/static/media/intro3.c5346f7ff4a76686507e.jpg",
-    "static/media/4.jpg": "/switzerland/static/media/4.03173f8a15b96f57bff4.jpg",
+    "static/media/7.jpg": "/switzerland/static/media/7.d4c2172c2983ec8d8348.jpg",
+    "static/media/4.jpg": "/switzerland/static/media/4.932b1585c77b0340a117.jpg",
     "static/media/3.jpg": "/switzerland/static/media/3.63941acc833a6b4dd9f0.jpg",
     "static/media/6.jpg": "/switzerland/static/media/6.f56e680611177a82410a.jpg",
     "static/media/intro4.jpg": "/switzerland/static/media/intro4.ef2ba1ad008b4d6ebd91.jpg",
     "static/media/9.jpg": "/switzerland/static/media/9.a2f8202fba4abb030f80.jpg",
-    "static/media/2.jpg": "/switzerland/static/media/2.5245a079f51374313267.jpg",
-    "static/media/7.jpg": "/switzerland/static/media/7.d4c2172c2983ec8d8348.jpg",
+    "static/media/2.jpg": "/switzerland/static/media/2.03173f8a15b96f57bff4.jpg",
     "static/media/8.jpg": "/switzerland/static/media/8.c11a02f36e711ce33a21.jpg",
     "static/media/intro1.jpg": "/switzerland/static/media/intro1.936ecaff3ffa91b9c3b7.jpg",
     "static/media/intro5.jpg": "/switzerland/static/media/intro5.e88ca8cdfe131143fa45.jpg",
@@ -21,11 +21,11 @@
     "static/media/intro6.jpg": "/switzerland/static/media/intro6.93c8e2e79d40fbbbe4da.jpg",
     "static/media/intro9.jpg": "/switzerland/static/media/intro9.036f448d11450b8e2c05.jpg",
     "index.html": "/switzerland/index.html",
-    "main.8a4d9700.css.map": "/switzerland/static/css/main.8a4d9700.css.map",
-    "main.d296ea22.js.map": "/switzerland/static/js/main.d296ea22.js.map"
+    "main.d5ff5e1c.css.map": "/switzerland/static/css/main.d5ff5e1c.css.map",
+    "main.6d0978a7.js.map": "/switzerland/static/js/main.6d0978a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a4d9700.css",
-    "static/js/main.d296ea22.js"
+    "static/css/main.d5ff5e1c.css",
+    "static/js/main.6d0978a7.js"
   ]
 }
