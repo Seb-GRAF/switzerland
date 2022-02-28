@@ -1,16 +1,14 @@
 import React, { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 
-import Title from "../title/title";
-import CityTitle from "../city-title/city-title";
-import DescriptionSection from "../description-section/description-section";
+import CityTitle from "../../components/city-title/city-title";
+import DescriptionSection from "../../components/description-section/description-section";
 import {
   DividerLarge,
   DividerSmall,
   TextDivider,
-  NextPage,
-} from "../dividers/dividers";
-import AnimatedPage from "../animated-page/animated-page";
+} from "../../components/dividers/dividers";
+import AnimatedPage from "../../components/animated-page/animated-page";
 
 import "./style.scss";
 
@@ -107,7 +105,6 @@ const Geneva = () => {
           </p>
         </DescriptionSection>
         <DividerSmall img={require("../../assets/cities/gva/6.jpg")} />
-        <NextPage link="/zurich" />
       </section>
     </AnimatedPage>
   );

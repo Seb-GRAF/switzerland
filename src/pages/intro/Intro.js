@@ -4,13 +4,13 @@ import {
   DividerSmall,
   TextDivider,
   NextPage,
-} from "../dividers/dividers";
-import DescriptionSection from "../description-section/description-section";
+} from "../../components/dividers/dividers";
+import DescriptionSection from "../../components/description-section/description-section";
 import LocomotiveScroll from "locomotive-scroll";
 import "./style.scss";
 
-import Title from "../title/title";
-import AnimatedPage from "../animated-page/animated-page";
+import Title from "../../components/city-title/title/title";
+import AnimatedPage from "../../components/animated-page/animated-page";
 
 const Intro = () => {
   useEffect(() => {
@@ -142,6 +142,7 @@ const Intro = () => {
             supported with federal funds.
           </p>
         </DescriptionSection>
+        <DividerSmall img={require("../../assets/photos/intro9.jpg")} />
         <NextPage link="/cities" />
       </section>
     </AnimatedPage>

@@ -1,6 +1,6 @@
 .city__title {
+  box-sizing: border-box;
   z-index: 100;
-  box-sizing: inline-box;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   justify-items: center;
@@ -8,7 +8,6 @@
   padding-inline: 10%;
   padding-block: 8rem;
   padding-top: 12rem;
-  //   height: 100vh;
   background-color: white;
   .text__wrapper {
     overflow: hidden;
@@ -19,9 +18,10 @@
     h1 {
       transition: transform 2s cubic-bezier(0.7, 0, 0.175, 1);
       transition-delay: 800ms;
-      transform: translateY(100%);
+      -webkit-transform: translateY(100%);
       font-size: 10vw;
       color: rgb(255, 255, 255);
+      text-shadow: #ffffff1a 0 10px 5px;
     }
     &.is-inview {
       h1 {
@@ -58,14 +58,12 @@
     flex-direction: column;
     .text__wrapper {
       overflow: hidden;
-      //   grid-column: 1/2;
-      //   grid-row: 1/2;
       mix-blend-mode: difference;
       z-index: 100;
       h1 {
         transition: transform 2s cubic-bezier(0.7, 0, 0.175, 1);
         transition-delay: 800ms;
-        transform: translateY(100%);
+        -webkit-transform: translateY(100%);
         font-size: 10vw;
         color: rgb(255, 255, 255);
       }

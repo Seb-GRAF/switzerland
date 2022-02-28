@@ -1,0 +1,17 @@
+.lausanne {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: white;
+  .city__title {
+    .text__wrapper {
+      overflow: hidden;
+      grid-column: 1/7;
+      grid-row: 1/2;
+      mix-blend-mode: difference;
+      z-index: 100;
+    }
+  }
+}

@@ -2,14 +2,18 @@ import React, { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { Link } from "react-router-dom";
 import useLocomotiveScroll from "../../hooks/useLocoScroll";
-import { DividerLarge, DividerSmall, TextDivider } from "../dividers/dividers";
-import CityTitle from "../city-title/city-title";
-import DescriptionSection from "../description-section/description-section";
+import {
+  DividerLarge,
+  DividerSmall,
+  TextDivider,
+} from "../../components/dividers/dividers";
+import CityTitle from "../../components/city-title/city-title";
+import DescriptionSection from "../../components/description-section/description-section";
 
 import "./style.scss";
 
-import Title from "../title/title";
-import AnimatedPage from "../animated-page/animated-page";
+import Title from "../../components/city-title/title/title";
+import AnimatedPage from "../../components/animated-page/animated-page";
 
 const Cities = () => {
   useEffect(() => {
@@ -47,16 +51,16 @@ const Cities = () => {
       <section className="cities" data-scroll-section>
         <Title title="cities">
           <div className="cities__list" data-scroll>
-            <Link to="/geneva">
-              <p>Geneva</p>
-            </Link>
-            <Link to="/zurich">
+            <Link to="/cities/zurich">
               <p>Zurich</p>
             </Link>
-            <Link to="/geneva">
+            <Link to="/cities/geneva">
+              <p>Geneva</p>
+            </Link>
+            <Link to="/cities/bern">
               <p>Bern</p>
             </Link>
-            <Link to="/geneva">
+            <Link to="/cities/lausanne">
               <p>Lausanne</p>
             </Link>
           </div>

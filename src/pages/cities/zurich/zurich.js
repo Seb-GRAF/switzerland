@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
-import CityTitle from "../city-title/city-title";
-import DescriptionSection from "../description-section/description-section";
+import CityTitle from "../../../components/city-title/city-title";
+import DescriptionSection from "../../../components/description-section/description-section";
 import {
   DividerLarge,
   DividerSmall,
   TextDivider,
   NextPage,
-} from "../dividers/dividers";
-import AnimatedPage from "../animated-page/animated-page";
+} from "../../../components/dividers/dividers";
+import AnimatedPage from "../../../components/animated-page/animated-page";
 
 import "./style.scss";
 
@@ -47,17 +47,14 @@ const Zurich = () => {
       <section className="zurich" data-scroll-section>
         <CityTitle
           city="ZURICH"
-          img={require("../../assets/cities/zrh/1.jpg")}
+          img={require("../../../assets/cities/zrh/1.jpg")}
         />
-        <DividerLarge img={require("../../assets/cities/zrh/2.jpg")} />
+        <DividerLarge img={require("../../../assets/cities/zrh/2.jpg")} />
         <TextDivider
           title="the economic centre of Switzerland"
           subtitle="Zurich was already a prosperous centre of commerce in the Early Middle Ages. The 1519 Reformation gave the economy such a boost that the city rapidly became Switzerland’s financial centre."
         />
-        <DescriptionSection
-          size="medium"
-          img={require("../../assets/cities/zrh/3.jpg")}
-        >
+        <DescriptionSection img={require("../../../assets/cities/zrh/3.jpg")}>
           <p>
             Zurich has a unique position in Switzerland. It is the country's
             largest city and home to an internationally reputed financial centre
@@ -75,7 +72,7 @@ const Zurich = () => {
         </DescriptionSection>
         <DescriptionSection
           size="medium"
-          img={require("../../assets/cities/zrh/4.jpg")}
+          img={require("../../../assets/cities/zrh/4.jpg")}
         >
           <p>
             Zurich lies in the German speaking part of the country, where people
@@ -89,10 +86,10 @@ const Zurich = () => {
             very hard to understand even for people with a German mother tongue.
           </p>
         </DescriptionSection>
-        <DividerSmall img={require("../../assets/cities/zrh/5.jpg")} />
+        <DividerSmall img={require("../../../assets/cities/zrh/5.jpg")} />
         <DescriptionSection
           size="large"
-          img={require("../../assets/cities/zrh/6.jpg")}
+          img={require("../../../assets/cities/zrh/6.jpg")}
         >
           <p>
             The current variety and quality of the cultural offer in Zürich is
@@ -110,12 +107,10 @@ const Zurich = () => {
           <p>
             In the Zürich-West former industrial area, where steel-workers once
             manufactured turbines and machinery, there are now any number of
-            clubs and discos, as well as galleries (the Löwenbräu art zone) and
-            modern theatre productions (the city theatre's Schiffbau-Halle) in
-            what has become a thriving district.
+            clubs and discos, as well as galleries.
           </p>
         </DescriptionSection>
-        <NextPage link="/bern" />
+        <NextPage link="/cities/geneva" />
       </section>
     </AnimatedPage>
   );
