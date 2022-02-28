@@ -8,7 +8,7 @@
   padding-inline: 10%;
   padding-block: 8rem;
   padding-top: 12rem;
-  background-color: white;
+  background-color: #f7f7f7;
   .text__wrapper {
     overflow: hidden;
     grid-column: 1/6;
@@ -21,7 +21,6 @@
       -webkit-transform: translateY(100%);
       font-size: 10vw;
       color: rgb(255, 255, 255);
-      text-shadow: #ffffff1a 0 10px 5px;
     }
     &.is-inview {
       h1 {

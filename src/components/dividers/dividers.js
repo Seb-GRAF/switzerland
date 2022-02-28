@@ -5,7 +5,12 @@ import "./style.scss";
 const DividerLarge = ({ img }) => {
   return (
     <div className="divider__large">
-      <img src={img} data-scroll data-scroll-speed="-3" />
+      <img
+        src={img}
+        alt="large divider image"
+        data-scroll
+        data-scroll-speed="-3"
+      />
     </div>
   );
 };
@@ -14,7 +19,12 @@ const DividerSmall = ({ img, source }) => {
   return (
     <div className="divider__small" data-scroll>
       <div className="divider__image">
-        <img src={img} data-scroll data-scroll-speed="-3" />
+        <img
+          src={img}
+          alt="small divider image"
+          data-scroll
+          data-scroll-speed="-3"
+        />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ const DescriptionSection = ({ children, img, size }) => {
         {children}
       </div>
       <div className={`description__image ${size}`} data-scroll>
-        <img src={img} data-scroll data-scroll-speed="-3" />
+        <img src={img} alt="city image" data-scroll data-scroll-speed="-3" />
       </div>
     </div>
   );

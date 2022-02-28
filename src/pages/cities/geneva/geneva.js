@@ -35,6 +35,7 @@ const Geneva = () => {
       if (e.direction === "up") nav.className = "nav__active";
       if (e.direction === "down") nav.className = "nav__hidden";
     });
+    document.querySelector("nav").className = "nav__active";
 
     const locomotiveUpdate = () => loco.update();
     setTimeout(locomotiveUpdate, 200);
