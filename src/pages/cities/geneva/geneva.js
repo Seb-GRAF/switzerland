@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 
-import Title from "../../../components/city-title/title/title";
 import CityTitle from "../../../components/city-title/city-title";
 import DescriptionSection from "../../../components/description-section/description-section";
 import {
@@ -76,11 +75,9 @@ const Geneva = () => {
           img={require("../../../assets/cities/gva/4.jpg")}
         >
           <p>
-            Switzerland has three official languages: French, German and
-            Italian. French is the predominant language spoken in Geneva, but
-            most citizens speak at least one other language. English is spoken
-            by about a quarter of the local population and majority of
-            foreigners.
+            French is the predominant language spoken in Geneva, but most
+            citizens speak at least one other language. English is spoken by
+            about a quarter of the local population and majority of foreigners.
           </p>
           <p>
             Of course, you can hear just about every other language in Geneva if

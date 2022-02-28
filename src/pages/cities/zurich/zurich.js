@@ -110,6 +110,7 @@ const Zurich = () => {
             clubs and discos, as well as galleries.
           </p>
         </DescriptionSection>
+        <DividerSmall img={require("../../../assets/cities/zrh/7.jpg")} />
         <NextPage link="/cities/geneva" />
       </section>
     </AnimatedPage>

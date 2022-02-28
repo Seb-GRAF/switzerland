@@ -9,7 +9,7 @@ import DescriptionSection from "../../components/description-section/description
 import LocomotiveScroll from "locomotive-scroll";
 import "./style.scss";
 
-import Title from "../../components/city-title/title/title";
+import Title from "../../components/title/title";
 import AnimatedPage from "../../components/animated-page/animated-page";
 
 const Intro = () => {

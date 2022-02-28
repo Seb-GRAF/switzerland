@@ -12,7 +12,7 @@ import DescriptionSection from "../../components/description-section/description
 
 import "./style.scss";
 
-import Title from "../../components/city-title/title/title";
+import Title from "../../components/title/title";
 import AnimatedPage from "../../components/animated-page/animated-page";
 
 const Cities = () => {
@@ -52,16 +52,16 @@ const Cities = () => {
         <Title title="cities">
           <div className="cities__list" data-scroll>
             <Link to="/cities/zurich">
-              <p>Zurich</p>
+              <p id="zrh">Zurich</p>
             </Link>
             <Link to="/cities/geneva">
-              <p>Geneva</p>
+              <p id="gva">Geneva</p>
             </Link>
             <Link to="/cities/bern">
-              <p>Bern</p>
+              <p id="be">Bern</p>
             </Link>
             <Link to="/cities/lausanne">
-              <p>Lausanne</p>
+              <p id="ls">Lausanne</p>
             </Link>
           </div>
         </Title>
