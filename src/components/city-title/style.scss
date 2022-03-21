@@ -52,7 +52,7 @@
 @media (max-width: 800px) {
   .city__title {
     padding-block: 10%;
-    padding-top: clamp(8rem, 50vw, 10rem);
+    padding-top: clamp(6rem, 40vw, 8rem);
     display: flex;
     flex-direction: column;
     .text__wrapper {

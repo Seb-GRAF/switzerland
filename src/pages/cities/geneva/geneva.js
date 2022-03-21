@@ -1,22 +1,37 @@
-import React, { useEffect } from "react";
-import LocomotiveScroll from "locomotive-scroll";
+import React, { useEffect, useState } from 'react';
+import LocomotiveScroll from 'locomotive-scroll';
 
-import CityTitle from "../../../components/city-title/city-title";
-import DescriptionSection from "../../../components/description-section/description-section";
+import CityTitle from '../../../components/city-title/city-title';
+import DescriptionSection from '../../../components/description-section/description-section';
 import {
   DividerLarge,
   DividerSmall,
   TextDivider,
   NextPage,
-} from "../../../components/dividers/dividers";
-import AnimatedPage from "../../../components/animated-page/animated-page";
+} from '../../../components/dividers/dividers';
+import AnimatedPage from '../../../components/animated-page/animated-page';
 
-import "./style.scss";
+import './style.scss';
 
 const Geneva = () => {
+  const [contentLoaded, setContentLoaded] = useState(false);
+
+  // sets ContentLoaded to true when all images are loaded
+  // using this to update Locomotive scroll to prevent page sizing problems
+  useEffect(() => {
+    const onPageLoad = () => {
+      setContentLoaded(true);
+    };
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
   useEffect(() => {
     const loco = new LocomotiveScroll({
-      el: document.querySelector("#app"),
+      el: document.querySelector('#app'),
       smooth: true,
       touchMultiplier: 2,
       multiplier: 1,
@@ -30,33 +45,32 @@ const Geneva = () => {
         smooth: true,
       },
     });
-    loco.on("scroll", (e) => {
-      const nav = document.querySelector("nav");
-      if (e.direction === "up") nav.className = "nav__active";
-      if (e.direction === "down") nav.className = "nav__hidden";
+    loco.on('scroll', (e) => {
+      const nav = document.querySelector('nav');
+      if (e.direction === 'up') nav.className = 'nav__active';
+      if (e.direction === 'down') nav.className = 'nav__hidden';
     });
-    document.querySelector("nav").className = "nav__active";
+    document.querySelector('nav').className = 'nav__active';
 
-    const locomotiveUpdate = () => loco.update();
-    setTimeout(locomotiveUpdate, 200);
+    loco.update();
     return () => {
       loco.destroy();
     };
-  });
+  }, [contentLoaded]);
 
   return (
     <AnimatedPage>
       <section className="geneva" data-scroll-section>
         <CityTitle
           city="GENEVA"
-          img={require("../../../assets/cities/gva/1.jpg")}
+          img={require('../../../assets/cities/gva/1.jpg')}
         />
-        <DividerLarge img={require("../../../assets/cities/gva/2.jpg")} />
+        <DividerLarge img={require('../../../assets/cities/gva/2.jpg')} />
         <TextDivider
           title="Post Tenebras Lux"
           subtitle="The motto of Geneva, Post Tenebras Lux, stands in Latin for light after darkness"
         />
-        <DescriptionSection img={require("../../../assets/cities/gva/3.jpg")}>
+        <DescriptionSection img={require('../../../assets/cities/gva/3.jpg')}>
           <p>
             Geneva is the capital of the Swiss Canton of Geneva located in the
             south-westernmost corner of Switzerland. The city is situated along
@@ -73,7 +87,7 @@ const Geneva = () => {
         </DescriptionSection>
         <DescriptionSection
           size="large"
-          img={require("../../../assets/cities/gva/4.jpg")}
+          img={require('../../../assets/cities/gva/4.jpg')}
         >
           <p>
             French is the predominant language spoken in Geneva, but most
@@ -87,7 +101,7 @@ const Geneva = () => {
             it is only a greeting, before transitioning to English.
           </p>
         </DescriptionSection>
-        <DescriptionSection img={require("../../../assets/cities/gva/5.jpg")}>
+        <DescriptionSection img={require('../../../assets/cities/gva/5.jpg')}>
           <p>
             Switzerland has been host to international organisations and
             conferences for more than 150 years. This role of host state is
@@ -103,7 +117,7 @@ const Geneva = () => {
             177 member states, including Switzerland.
           </p>
         </DescriptionSection>
-        <DividerSmall img={require("../../../assets/cities/gva/6.jpg")} />
+        <DividerSmall img={require('../../../assets/cities/gva/6.jpg')} />
         <NextPage link="/cities/bern" />
       </section>
     </AnimatedPage>

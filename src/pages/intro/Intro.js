@@ -1,21 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   DividerLarge,
   DividerSmall,
   TextDivider,
   NextPage,
-} from "../../components/dividers/dividers";
-import DescriptionSection from "../../components/description-section/description-section";
-import LocomotiveScroll from "locomotive-scroll";
-import "./style.scss";
+} from '../../components/dividers/dividers';
+import DescriptionSection from '../../components/description-section/description-section';
+import LocomotiveScroll from 'locomotive-scroll';
+import './style.scss';
 
-import Title from "../../components/title/title";
-import AnimatedPage from "../../components/animated-page/animated-page";
+import Title from '../../components/title/title';
+import AnimatedPage from '../../components/animated-page/animated-page';
 
 const Intro = () => {
+  const [contentLoaded, setContentLoaded] = useState(false);
+
+  // sets ContentLoaded to true when all images are loaded
+  // using this to update Locomotive scroll to prevent page sizing problems
+  useEffect(() => {
+    const onPageLoad = () => {
+      setContentLoaded(true);
+    };
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
+
   useEffect(() => {
     const loco = new LocomotiveScroll({
-      el: document.querySelector("#app"),
+      el: document.querySelector('#app'),
       smooth: true,
       touchMultiplier: 2,
       multiplier: 1,
@@ -29,28 +45,27 @@ const Intro = () => {
         smooth: true,
       },
     });
-    loco.on("scroll", (e) => {
-      const nav = document.querySelector("nav");
-      if (e.direction === "up") nav.className = "nav__active";
-      if (e.direction === "down") nav.className = "nav__hidden";
+    loco.on('scroll', (e) => {
+      const nav = document.querySelector('nav');
+      if (e.direction === 'up') nav.className = 'nav__active';
+      if (e.direction === 'down') nav.className = 'nav__hidden';
     });
-    const locomotiveUpdate = () => loco.update();
-    setTimeout(locomotiveUpdate, 200);
+    loco.update();
     return () => {
       loco.destroy();
     };
-  });
+  }, [contentLoaded]);
 
   return (
     <AnimatedPage>
       <section className="intro" data-scroll-section>
         <Title
-          title={"switzerland"}
+          title={'switzerland'}
           subtitle="Unus pro omnibus, omnes pro uno"
         />
-        <DividerLarge img={require("../../assets/photos/intro1.jpg")} />
+        <DividerLarge img={require('../../assets/photos/intro1.jpg')} />
         <TextDivider title="A landlocked country, filled with giant mountains, deep Alpine lakes and grassey valleys."></TextDivider>
-        <DescriptionSection img={require("../../assets/photos/intro2.jpg")}>
+        <DescriptionSection img={require('../../assets/photos/intro2.jpg')}>
           <p>
             Switzerland is a small mountainous country located in central
             Europe. It is about the size of New Jersey and is between France and
@@ -68,15 +83,15 @@ const Intro = () => {
             the different regions (cantons) of the country.
           </p>
         </DescriptionSection>
-        <DividerSmall img={require("../../assets/photos/intro3.jpg")} />
-        <DividerLarge img={require("../../assets/photos/intro4.jpg")} />
+        <DividerSmall img={require('../../assets/photos/intro3.jpg')} />
+        <DividerLarge img={require('../../assets/photos/intro4.jpg')} />
         <TextDivider
           title="Unus pro omnibus, omnes pro uno"
           subtitle='Unus pro omnibus, omnes pro uno is a Latin phrase that means "One for all, all for one". It is the unofficial motto of Switzerland.'
         ></TextDivider>
         <DescriptionSection
           size="medium"
-          img={require("../../assets/photos/intro5.jpg")}
+          img={require('../../assets/photos/intro5.jpg')}
         >
           <p>
             For many outsiders, Switzerland evokes a prosperous if rather staid
@@ -92,7 +107,7 @@ const Intro = () => {
         </DescriptionSection>
         <DescriptionSection
           size="small"
-          img={require("../../assets/photos/intro6.jpg")}
+          img={require('../../assets/photos/intro6.jpg')}
         >
           <p>
             Switzerland is divided into 26 different areas called cantons. A
@@ -104,7 +119,7 @@ const Intro = () => {
             structure it has now.
           </p>
         </DescriptionSection>
-        <DescriptionSection img={require("../../assets/photos/intro7.jpg")}>
+        <DescriptionSection img={require('../../assets/photos/intro7.jpg')}>
           <p>
             Most of the major cultural regions of western continental Europe
             (German, French, and Italian) into contact in Switzerland. Thus, one
@@ -121,7 +136,7 @@ const Intro = () => {
         </DescriptionSection>
         <DescriptionSection
           size="big"
-          img={require("../../assets/photos/intro8.jpg")}
+          img={require('../../assets/photos/intro8.jpg')}
         >
           <p>
             As a country where diverse traditions and cultures meet and
@@ -142,7 +157,7 @@ const Intro = () => {
             supported with federal funds.
           </p>
         </DescriptionSection>
-        <DividerSmall img={require("../../assets/photos/intro9.jpg")} />
+        <DividerSmall img={require('../../assets/photos/intro9.jpg')} />
         <NextPage link="/cities" />
       </section>
     </AnimatedPage>

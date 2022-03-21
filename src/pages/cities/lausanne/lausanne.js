@@ -1,22 +1,37 @@
-import React, { useEffect } from "react";
-import LocomotiveScroll from "locomotive-scroll";
+import React, { useEffect, useState } from 'react';
+import LocomotiveScroll from 'locomotive-scroll';
 
-import CityTitle from "../../../components/city-title/city-title";
-import DescriptionSection from "../../../components/description-section/description-section";
+import CityTitle from '../../../components/city-title/city-title';
+import DescriptionSection from '../../../components/description-section/description-section';
 import {
   DividerLarge,
   DividerSmall,
   TextDivider,
   NextPage,
-} from "../../../components/dividers/dividers";
-import AnimatedPage from "../../../components/animated-page/animated-page";
+} from '../../../components/dividers/dividers';
+import AnimatedPage from '../../../components/animated-page/animated-page';
 
-import "./style.scss";
+import './style.scss';
 
 const Lausanne = () => {
+  const [contentLoaded, setContentLoaded] = useState(false);
+
+  // sets ContentLoaded to true when all images are loaded
+  // using this to update Locomotive scroll to prevent page sizing problems
+  useEffect(() => {
+    const onPageLoad = () => {
+      setContentLoaded(true);
+    };
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
   useEffect(() => {
     const loco = new LocomotiveScroll({
-      el: document.querySelector("#app"),
+      el: document.querySelector('#app'),
       smooth: true,
       touchMultiplier: 2,
       multiplier: 1,
@@ -30,28 +45,27 @@ const Lausanne = () => {
         smooth: true,
       },
     });
-    loco.on("scroll", (e) => {
-      const nav = document.querySelector("nav");
-      if (e.direction === "up") nav.className = "nav__active";
-      if (e.direction === "down") nav.className = "nav__hidden";
+    loco.on('scroll', (e) => {
+      const nav = document.querySelector('nav');
+      if (e.direction === 'up') nav.className = 'nav__active';
+      if (e.direction === 'down') nav.className = 'nav__hidden';
     });
-    document.querySelector("nav").className = "nav__active";
+    document.querySelector('nav').className = 'nav__active';
 
-    const locomotiveUpdate = () => loco.update();
-    setTimeout(locomotiveUpdate, 200);
+    loco.update();
     return () => {
       loco.destroy();
     };
-  });
+  }, [contentLoaded]);
 
   return (
     <AnimatedPage>
       <section className="lausanne" data-scroll-section>
         <CityTitle
           city="LAUSANNE"
-          img={require("../../../assets/cities/ls/1.jpg")}
+          img={require('../../../assets/cities/ls/1.jpg')}
         />
-        <DividerLarge img={require("../../../assets/cities/ls/2.jpg")} />
+        <DividerLarge img={require('../../../assets/cities/ls/2.jpg')} />
         <TextDivider
           title="Olympic Capital"
           subtitle="Over the years, more and more International Sports Federations and sports organizations have joined the IOC in making Lausanne their home."
@@ -59,7 +73,7 @@ const Lausanne = () => {
 
         <DescriptionSection
           size="large"
-          img={require("../../../assets/cities/ls/3.jpg")}
+          img={require('../../../assets/cities/ls/3.jpg')}
         >
           <p>
             But moreover, Lausanne, in collaboration with the Canton de Vaud,
@@ -79,15 +93,15 @@ const Lausanne = () => {
             postal, railway, and copyright unions.
           </p>
         </DescriptionSection>
-        <DividerSmall img={require("../../../assets/cities/ls/4.jpg")} />
-        <DividerLarge img={require("../../../assets/cities/ls/5.jpg")} />
+        <DividerSmall img={require('../../../assets/cities/ls/4.jpg')} />
+        <DividerLarge img={require('../../../assets/cities/ls/5.jpg')} />
         <TextDivider
           title="City of art and culture"
           subtitle="The cultural city of Lausanne is multifaceted and vibrant: from Vidy to Vallon and on to Flon and Malley, great names and discoveries accompany you throughout your cultural getaways. Every day, you can choose from a score of museums, over thirty performance venues and a multitude of festivals."
         />
         <DescriptionSection
           size="large"
-          img={require("../../../assets/cities/ls/6.jpg")}
+          img={require('../../../assets/cities/ls/6.jpg')}
         >
           <p>
             Cultural production in Lausanne covers every sphere of the arts,
@@ -105,7 +119,7 @@ const Lausanne = () => {
             its kind in French-speaking Switzerland.
           </p>
         </DescriptionSection>
-        <DescriptionSection img={require("../../../assets/cities/ls/7.jpg")}>
+        <DescriptionSection img={require('../../../assets/cities/ls/7.jpg')}>
           <p>
             Cultural heritage is omnipresent in Lausanne. At the heart of the
             city it is embodied by the majestic Gothic cathedral and the
@@ -118,7 +132,7 @@ const Lausanne = () => {
             the districts, culture is permanently within everyone‟s grasp here.
           </p>
         </DescriptionSection>
-        <DescriptionSection img={require("../../../assets/cities/ls/8.jpg")}>
+        <DescriptionSection img={require('../../../assets/cities/ls/8.jpg')}>
           <p>
             Lausanne has nearly two hundred public and private schools ranging
             from nursery to university with specialist schools in between.
@@ -132,7 +146,7 @@ const Lausanne = () => {
             international rankings.
           </p>
         </DescriptionSection>
-        <DividerSmall img={require("../../../assets/cities/ls/9.jpg")} />
+        <DividerSmall img={require('../../../assets/cities/ls/9.jpg')} />
         <NextPage link="/cities" />
       </section>
     </AnimatedPage>

@@ -1,21 +1,36 @@
-import React, { useEffect } from "react";
-import LocomotiveScroll from "locomotive-scroll";
-import CityTitle from "../../../components/city-title/city-title";
-import DescriptionSection from "../../../components/description-section/description-section";
+import React, { useEffect, useState } from 'react';
+import LocomotiveScroll from 'locomotive-scroll';
+import CityTitle from '../../../components/city-title/city-title';
+import DescriptionSection from '../../../components/description-section/description-section';
 import {
   DividerLarge,
   DividerSmall,
   TextDivider,
   NextPage,
-} from "../../../components/dividers/dividers";
-import AnimatedPage from "../../../components/animated-page/animated-page";
+} from '../../../components/dividers/dividers';
+import AnimatedPage from '../../../components/animated-page/animated-page';
 
-import "./style.scss";
+import './style.scss';
 
 const Bern = () => {
+  const [contentLoaded, setContentLoaded] = useState(false);
+
+  // sets ContentLoaded to true when all images are loaded
+  // using this to update Locomotive scroll to prevent page sizing problems
+  useEffect(() => {
+    const onPageLoad = () => {
+      setContentLoaded(true);
+    };
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
   useEffect(() => {
     const loco = new LocomotiveScroll({
-      el: document.querySelector("#app"),
+      el: document.querySelector('#app'),
       smooth: true,
       touchMultiplier: 2,
       multiplier: 1,
@@ -29,35 +44,33 @@ const Bern = () => {
         smooth: true,
       },
     });
-    loco.on("scroll", (e) => {
-      const nav = document.querySelector("nav");
-      if (e.direction === "up") nav.className = "nav__active";
-      if (e.direction === "down") nav.className = "nav__hidden";
+    loco.on('scroll', (e) => {
+      const nav = document.querySelector('nav');
+      if (e.direction === 'up') nav.className = 'nav__active';
+      if (e.direction === 'down') nav.className = 'nav__hidden';
     });
-    document.querySelector("nav").className = "nav__active";
-
-    const locomotiveUpdate = () => loco.update();
-    setTimeout(locomotiveUpdate, 200);
+    document.querySelector('nav').className = 'nav__active';
+    loco.update();
     return () => {
       loco.destroy();
     };
-  });
+  }, [contentLoaded]);
 
   return (
     <AnimatedPage>
       <section className="bern" data-scroll-section>
         <CityTitle
           city="BERN"
-          img={require("../../../assets/cities/bern/1.jpg")}
+          img={require('../../../assets/cities/bern/1.jpg')}
         />
-        <DividerLarge img={require("../../../assets/cities/bern/2.jpg")} />
+        <DividerLarge img={require('../../../assets/cities/bern/2.jpg')} />
         <TextDivider
           title="Capital of Switzerland"
           subtitle="Also referred to as the federal city"
         />
         <DescriptionSection
           size="large"
-          img={require("../../../assets/cities/bern/3.jpg")}
+          img={require('../../../assets/cities/bern/3.jpg')}
         >
           <p>
             Lying along a loop of the Aare River, it was founded as a military
@@ -76,10 +89,10 @@ const Bern = () => {
             postal, railway, and copyright unions.
           </p>
         </DescriptionSection>
-        <DividerSmall img={require("../../../assets/cities/bern/4.jpg")} />
-        <DividerLarge img={require("../../../assets/cities/bern/5.jpg")} />
+        <DividerSmall img={require('../../../assets/cities/bern/4.jpg')} />
+        <DividerLarge img={require('../../../assets/cities/bern/5.jpg')} />
         <TextDivider title="City of bears" />
-        <DescriptionSection img={require("../../../assets/cities/bern/6.jpg")}>
+        <DescriptionSection img={require('../../../assets/cities/bern/6.jpg')}>
           <p>
             The city of Bern has had a close relationship with the bear since
             its foundation. According to legend, the city owes its name to the
@@ -95,7 +108,7 @@ const Bern = () => {
         </DescriptionSection>
         <DescriptionSection
           size="small"
-          img={require("../../../assets/cities/bern/7.jpg")}
+          img={require('../../../assets/cities/bern/7.jpg')}
         >
           <p>
             Home to some of Switzerland’s greatest museums and galleries, Bern
@@ -104,7 +117,7 @@ const Bern = () => {
             memorable visit! Bern is an absolute must for culture aficionados.
           </p>
         </DescriptionSection>
-        <DividerSmall img={require("../../../assets/cities/bern/8.jpg")} />
+        <DividerSmall img={require('../../../assets/cities/bern/8.jpg')} />
         <NextPage link="/cities/lausanne" />
       </section>
     </AnimatedPage>
