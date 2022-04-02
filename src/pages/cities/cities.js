@@ -1,43 +1,22 @@
-import React, { useEffect } from 'react';
-import LocomotiveScroll from 'locomotive-scroll';
-import { Link } from 'react-router-dom';
-import useLocomotiveScroll from '../../hooks/useLocoScroll';
+import React, { useEffect } from 'react'
+import LocomotiveScroll from 'locomotive-scroll'
+import { Link } from 'react-router-dom'
+import useLocomotiveScroll from '../../utils/useLocoScroll'
 import {
   DividerLarge,
   DividerSmall,
   TextDivider,
-} from '../../components/dividers/dividers';
-import CityTitle from '../../components/city-title/city-title';
-import DescriptionSection from '../../components/description-section/description-section';
+} from '../../components/dividers/dividers'
+import CityTitle from '../../components/city-title/city-title'
+import DescriptionSection from '../../components/description-section/description-section'
 
-import './style.scss';
+import './style.scss'
 
-import Title from '../../components/title/title';
-import AnimatedPage from '../../components/animated-page/animated-page';
+import Title from '../../components/title/title'
+import AnimatedPage from '../../components/animated-page/animated-page'
 
 const Cities = () => {
-  useEffect(() => {
-    const loco = new LocomotiveScroll({
-      el: document.querySelector('#app'),
-      smooth: true,
-      touchMultiplier: 2,
-      multiplier: 1,
-      getDirection: true,
-      mobile: {
-        breakpoint: 0,
-        smooth: true,
-      },
-      tablet: {
-        breakpoint: 0,
-        smooth: true,
-      },
-    });
-    document.querySelector('nav').className = 'nav__active';
-    loco.update();
-    return () => {
-      loco.destroy();
-    };
-  });
+  useLocomotiveScroll()
 
   return (
     <AnimatedPage>
@@ -60,7 +39,7 @@ const Cities = () => {
         </Title>
       </section>
     </AnimatedPage>
-  );
-};
+  )
+}
 
-export default Cities;
+export default Cities

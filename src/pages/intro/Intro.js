@@ -1,60 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import {
   DividerLarge,
   DividerSmall,
   TextDivider,
   NextPage,
-} from '../../components/dividers/dividers';
-import DescriptionSection from '../../components/description-section/description-section';
-import LocomotiveScroll from 'locomotive-scroll';
-import './style.scss';
+} from '../../components/dividers/dividers'
+import DescriptionSection from '../../components/description-section/description-section'
+import './style.scss'
 
-import Title from '../../components/title/title';
-import AnimatedPage from '../../components/animated-page/animated-page';
+import Title from '../../components/title/title'
+import AnimatedPage from '../../components/animated-page/animated-page'
+import useLocomotiveScroll from '../../utils/useLocoScroll'
 
 const Intro = () => {
-  const [contentLoaded, setContentLoaded] = useState(false);
-
-  // sets ContentLoaded to true when all images are loaded
-  // using this to update Locomotive scroll to prevent page sizing problems
-  useEffect(() => {
-    const onPageLoad = () => {
-      setContentLoaded(true);
-    };
-    if (document.readyState === 'complete') {
-      onPageLoad();
-    } else {
-      window.addEventListener('load', onPageLoad);
-      return () => window.removeEventListener('load', onPageLoad);
-    }
-  }, []);
-
-  useEffect(() => {
-    const loco = new LocomotiveScroll({
-      el: document.querySelector('#app'),
-      smooth: true,
-      touchMultiplier: 2,
-      multiplier: 1,
-      getDirection: true,
-      mobile: {
-        breakpoint: 0,
-        smooth: true,
-      },
-      tablet: {
-        breakpoint: 0,
-        smooth: true,
-      },
-    });
-    loco.on('scroll', (e) => {
-      const nav = document.querySelector('nav');
-      if (e.direction === 'up') nav.className = 'nav__active';
-      if (e.direction === 'down') nav.className = 'nav__hidden';
-    });
-    loco.update();
-    return () => {
-      loco.destroy();
-    };
-  }, [contentLoaded]);
+  useLocomotiveScroll()
 
   return (
     <AnimatedPage>
@@ -161,7 +120,7 @@ const Intro = () => {
         <NextPage link="/cities" />
       </section>
     </AnimatedPage>
-  );
-};
+  )
+}
 
-export default Intro;
+export default Intro

@@ -1,14 +1,15 @@
-import React from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
-import Nav from "../nav/nav";
-import Cities from "../cities/cities";
-import Zurich from "../cities/zurich/zurich";
-import Geneva from "../cities/geneva/geneva";
-import Bern from "../cities/bern/bern";
-import Lausanne from "../cities/lausanne/lausanne";
-import Intro from "../intro/intro";
-import "./style.scss";
-import { AnimatePresence } from "framer-motion";
+import React, { useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import Nav from '../nav/nav'
+import Cities from '../cities/cities'
+import Zurich from '../cities/zurich/zurich'
+import Geneva from '../cities/geneva/geneva'
+import Bern from '../cities/bern/bern'
+import Lausanne from '../cities/lausanne/lausanne'
+import Intro from '../intro/intro'
+import './style.scss'
+import { AnimatePresence } from 'framer-motion'
+import { preloadImages } from '../../utils/preloadImages'
 
 const App = () => {
   // const [preloader, setPreloader] = useState(true);
@@ -30,7 +31,7 @@ const App = () => {
   //   }
   // }, [timer]);
 
-  const location = useLocation();
+  const location = useLocation()
   return (
     <div className="app" id="app" data-scroll-container>
       <Nav />
@@ -45,7 +46,7 @@ const App = () => {
         </Routes>
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
