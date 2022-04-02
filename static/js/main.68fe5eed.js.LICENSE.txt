@@ -4,6 +4,12 @@ object-assign
 @license MIT
 */
 
+/*!
+ * imagesLoaded v5.0.0
+ * JavaScript is all like "You images are done yet or what?"
+ * MIT License
+ */
+
 /**
  * React Router DOM v6.2.1
  *
