@@ -9,38 +9,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #e2e5eb;
+  color: #cdc9bd;
   z-index: 100;
-  // &:after {
-  //   background-color: #313641;
-  //   position: absolute;
-  //   content: "";
-  //   width: 100%;
-  //   left: 0;
-  //   bottom: -100%;
-  //   height: 100%;
-  // animation: curtain 2s 1;
-  // -webkit-transform: translateY(-100%);
-  // transition: transform 1s cubic-bezier(0.7, 0, 0.175, 1);
-  // z-index: -2;
-  // }
-  // @keyframes curtain {
-  //   0% {
-  //     -webkit-transform: translateY(0%);
-  //   }
-  //   40% {
-  //     -webkit-transform: translateY(0%);
-  //   }
-  //   100% {
-  //     transform: translateY(-100%);
-  //   }
-  // }
+
   .text__wrapper {
     overflow: hidden;
     h1,
     h2 {
-      -webkit-transition: transform 1s cubic-bezier(0.7, 0, 0.175, 1);
-      -webkit-transform: translateY(100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -55,6 +30,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 0.5rem;
     }
   }
   .cities__list {
@@ -66,101 +42,13 @@
       text-decoration: none;
       width: 12rem;
       text-align: center;
+      overflow: hidden;
     }
-    p {
+    h2 {
       font-weight: 200;
-      color: #e2e5eb;
+      color: #cdc9bd;
       font-size: clamp(1.5rem, 6vw, 2.5rem);
       z-index: 1;
-      transition: font-weight 400ms cubic-bezier(0.7, 0, 0.175, 1);
-      transition-delay: 150ms;
-      &:after {
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        content: '';
-        background-image: url('../../assets/cities/gva/1.jpg');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 18rem;
-        height: 18rem;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0.5);
-        transition: 700ms cubic-bezier(0.7, 0, 0.175, 1);
-        z-index: -1;
-      }
-      &:hover {
-        font-weight: 600;
-        &:after {
-          visibility: visible;
-          opacity: 1;
-          transform: translate(-50%, -50%) rotate(25deg) scale(1);
-        }
-      }
-    }
-
-    #zrh {
-      &:after {
-        background-image: url('../../assets/cities/zrh/2.jpg');
-      }
-      &:hover {
-        &:after {
-          transform: translate(-50%, -50%) rotate(12deg) scale(1);
-        }
-      }
-    }
-    #gva {
-      &:after {
-        background-image: url('../../assets/cities/gva/1.jpg');
-      }
-      &:hover {
-        &:after {
-          transform: translate(-50%, -50%) rotate(-8deg) scale(1);
-        }
-      }
-    }
-    #be {
-      &:after {
-        background-image: url('../../assets/cities/bern/1.jpg');
-      }
-      &:hover {
-        &:after {
-          transform: translate(-50%, -50%) rotate(12deg) scale(1);
-        }
-      }
-    }
-    #ls {
-      &:after {
-        background-image: url('../../assets/cities/ls/1.jpg');
-      }
-      &:hover {
-        &:after {
-          transform: translate(-50%, -50%) rotate(-15deg) scale(1);
-        }
-      }
-    }
-  }
-  @media (pointer: coarse) {
-    .cities__list {
-      a {
-        p {
-          &::after {
-            display: none;
-            &:hover {
-              display: none;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &.is-inview {
-    h1,
-    h2 {
-      -webkit-transform: translateY(0%);
     }
   }
 }
@@ -170,27 +58,5 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
-  }
-}
-@keyframes scaleDown {
-  0% {
-    -webkit-transform: scale(2);
-  }
-  100% {
-    -webkit-transform: scale(1);
-  }
-}
-@keyframes bounce {
-  0% {
-    -webkit-transform: translateY(0);
-  }
-  30% {
-    -webkit-transform: translateY(50%);
-  }
-  60% {
-    -webkit-transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(0);
   }
 }

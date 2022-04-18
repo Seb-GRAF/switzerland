@@ -11,10 +11,10 @@ import {
 import AnimatedPage from '../../../components/animated-page/animated-page'
 
 import './style.scss'
-import useLocomotiveScroll from '../../../utils/useLocoScroll'
+import useSmoothScroll from '../../../utils/useSmoothScroll'
 
 const Zurich = () => {
-  useLocomotiveScroll()
+  useSmoothScroll()
 
   return (
     <AnimatedPage>

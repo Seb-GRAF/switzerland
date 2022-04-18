@@ -1,39 +1,31 @@
 import React, { useEffect } from 'react'
-import LocomotiveScroll from 'locomotive-scroll'
 import { Link } from 'react-router-dom'
-import useLocomotiveScroll from '../../utils/useLocoScroll'
-import {
-  DividerLarge,
-  DividerSmall,
-  TextDivider,
-} from '../../components/dividers/dividers'
-import CityTitle from '../../components/city-title/city-title'
-import DescriptionSection from '../../components/description-section/description-section'
 
 import './style.scss'
 
 import Title from '../../components/title/title'
 import AnimatedPage from '../../components/animated-page/animated-page'
+import useSmoothScroll from '../../utils/useSmoothScroll'
 
 const Cities = () => {
-  useLocomotiveScroll()
+  useSmoothScroll(true)
 
   return (
     <AnimatedPage>
-      <section className="cities" data-scroll-section>
+      <section className="cities">
         <Title title="cities">
-          <div className="cities__list" data-scroll>
+          <div className="cities__list">
             <Link to="/cities/zurich">
-              <p id="zrh">Zurich</p>
+              <h2 id="zrh">Zurich</h2>
             </Link>
             <Link to="/cities/geneva">
-              <p id="gva">Geneva</p>
+              <h2 id="gva">Geneva</h2>
             </Link>
             <Link to="/cities/bern">
-              <p id="be">Bern</p>
+              <h2 id="be">Bern</h2>
             </Link>
             <Link to="/cities/lausanne">
-              <p id="ls">Lausanne</p>
+              <h2 id="ls">Lausanne</h2>
             </Link>
           </div>
         </Title>

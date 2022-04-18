@@ -12,10 +12,31 @@ import {
 import AnimatedPage from '../../../components/animated-page/animated-page'
 
 import './style.scss'
-import useLocomotiveScroll from '../../../utils/useLocoScroll'
+import useSmoothScroll from '../../../utils/useSmoothScroll'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import ScrollSmoother from 'gsap/ScrollSmoother'
+import gsap from 'gsap'
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
 const Geneva = () => {
-  useLocomotiveScroll()
+  useSmoothScroll()
+
+  // useEffect(() => {
+  //   const title = document.querySelector('.city__title')
+
+  //   const split = new SplitText(title.querySelector('h1'), {
+  //     type: 'chars',
+  //   })
+
+  //   gsap.from(split.chars, {
+  //     y: '100%',
+  //     stagger: '0.04',
+  //     duration: '1',
+  //     ease: 'power3',
+  //     delay: '1.4',
+  //   })
+  // }, [])
 
   return (
     <AnimatedPage>

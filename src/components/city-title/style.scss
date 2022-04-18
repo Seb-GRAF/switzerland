@@ -15,38 +15,26 @@
     grid-row: 1/2;
     mix-blend-mode: difference;
     z-index: 100;
+    white-space: nowrap;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     h1 {
-      transition: transform 2s cubic-bezier(0.7, 0, 0.175, 1);
-      transition-delay: 800ms;
-      -webkit-transform: translateY(100%);
       font-size: 10vw;
       color: rgb(255, 255, 255);
-    }
-    &.is-inview {
-      h1 {
-        transform: translateY(0%);
-      }
+      word-wrap: none;
     }
   }
-  .city__image {
+  .city__image__wrapper {
     grid-column: 4/11;
     grid-row: 1/2;
     height: clamp(10rem, 40vw, 40rem);
     width: 100%;
-    clip-path: inset(100% 0% 0% 0%);
-    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
-    transition-delay: 1s;
     display: flex;
     justify-content: center;
     align-items: center;
-    img {
-      //   height: 140%;
-    }
-  }
-  &.is-inview {
-    .city__image {
-      clip-path: inset(0% 0% 0% 0%);
-    }
+    overflow: hidden;
   }
 }
 @media (max-width: 800px) {
@@ -57,40 +45,22 @@
     flex-direction: column;
     .text__wrapper {
       overflow: hidden;
-      mix-blend-mode: difference;
+      mix-blend-mode: normal;
       z-index: 100;
+      margin-bottom: 1rem;
       h1 {
-        transition: transform 2s cubic-bezier(0.7, 0, 0.175, 1);
-        transition-delay: 800ms;
-        -webkit-transform: translateY(100%);
         font-size: 10vw;
-        color: rgb(255, 255, 255);
-      }
-      &.is-inview {
-        h1 {
-          transform: translateY(0%);
-        }
+        color: #131313;
       }
     }
-    .city__image {
+    .city__image__wrapper {
       grid-column: 1/2;
       grid-row: 2/3;
-      height: 20rem;
       width: 100%;
-      clip-path: inset(100% 0% 0% 0%);
-      transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
-      transition-delay: 1s;
       display: flex;
+      height: 20rem;
       justify-content: center;
       align-items: center;
-      img {
-        //   height: 140%;
-      }
-    }
-    &.is-inview {
-      .city__image {
-        clip-path: inset(0% 0% 0% 0%);
-      }
     }
   }
 }

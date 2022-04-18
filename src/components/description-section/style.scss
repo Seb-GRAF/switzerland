@@ -16,15 +16,9 @@
     gap: 2rem;
     padding-inline: clamp(1rem, 12vw, 10rem);
     padding-block: clamp(4rem, 12vw, 6rem);
-    clip-path: inset(0% 0% 100% 0%);
-    opacity: 0;
-    transition: clip-path 2s cubic-bezier(0.7, 0, 0.175, 1);
-    &.is-inview {
-      clip-path: inset(0% 0% 0% 0%);
-      opacity: 1;
-    }
     p {
-      text-indent: 2rem;
+      text-indent: 1rem;
+      display: block;
     }
   }
   .description__image {
@@ -51,7 +45,7 @@
       padding-inline: clamp(1rem, 12vw, 6rem);
       padding-block: 0;
       p {
-        text-indent: 3rem;
+        text-indent: 2rem;
       }
     }
     .description__image {

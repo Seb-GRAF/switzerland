@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import LocomotiveScroll from 'locomotive-scroll'
+import React, { useEffect } from 'react'
 
 import CityTitle from '../../../components/city-title/city-title'
 import DescriptionSection from '../../../components/description-section/description-section'
@@ -12,10 +11,37 @@ import {
 import AnimatedPage from '../../../components/animated-page/animated-page'
 
 import './style.scss'
-import useLocomotiveScroll from '../../../utils/useLocoScroll'
+import useSmoothScroll from '../../../utils/useSmoothScroll'
+
+import gsap from 'gsap'
+import { SplitText } from 'gsap/SplitText'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(SplitText, ScrollTrigger)
 
 const Lausanne = () => {
-  useLocomotiveScroll()
+  useSmoothScroll()
+
+  // useEffect(() => {
+  //   const dividers = gsap.utils.toArray('.text__divider')
+
+  //   dividers.forEach((divider) => {
+  //     const split = new SplitText(divider.querySelector('h1'), {
+  //       type: 'chars',
+  //     })
+  //     console.log(divider)
+  //     gsap.to(split.chars, {
+  //       scrollTrigger: {
+  //         trigger: divider,
+  //         start: 'top bottom',
+  //       },
+  //       duration: 5,
+  //       stagger: 0.1,
+  //       delay: 1,
+  //       y: '100%',
+  //     })
+  //   })
+  // }, [])
 
   return (
     <AnimatedPage>
