@@ -15,18 +15,24 @@ export default function useSmoothScroll() {
   }, [nav])
 
   useEffect(() => {
+    const createSmoothScrolling = () => {
+      const smoother = ScrollSmoother.create({
+        content: '.scroll__container',
+        wrapper: '.scroll__wrapper',
+        smooth: 0.5,
+        effects: true,
+        ease: 'expo',
+        // ignoreMobileResize: true,
+        normalizeScroll: true,
+      })
+      smoother.effects('img', { speed: 0.8 })
+      smoother.scrollTo(0)
+    }
+
     preloadImages()
       .then(() => {
-        const smoother = ScrollSmoother.create({
-          content: '.scroll__container',
-          wrapper: '.scroll__wrapper',
-          smooth: 0.5,
-          effects: true,
-          ease: 'expo',
-          ignoreMobileResize: true,
-        })
-        smoother.effects('img', { speed: 0.8 })
-        smoother.scrollTo(0)
+        createSmoothScrolling()
+        let smoother = ScrollSmoother.get()
 
         window.addEventListener('scroll', () => {
           let velocity = smoother.getVelocity()

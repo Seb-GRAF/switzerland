@@ -5,7 +5,6 @@ import './style.scss'
 
 import Title from '../../components/title/title'
 import AnimatedPage from '../../components/animated-page/animated-page'
-import useSmoothScroll from '../../utils/useSmoothScroll'
 
 import gsap from 'gsap'
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './style.scss'
 
 import gsap from 'gsap'
@@ -12,7 +12,7 @@ const DescriptionSection = ({ children, img, size }) => {
     <div className="description__section">
       <div className="description__text">{children}</div>
       <div className={`description__image ${size}`}>
-        <img src={img} alt="city image" />
+        <img src={img} alt="city" />
       </div>
     </div>
   )

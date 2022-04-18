@@ -32,20 +32,9 @@ const AnimatedPage = ({ children }) => {
       preloader.style.pointerEvents = 'none'
     }
 
-    // const animateNav = () => {
-    //   gsap.from('nav', {
-    //     y: '-100%',
-    //     opacity: 0,
-    //     duration: 2,
-    //     ease: 'expo',
-    //     delay: 1,
-    //   })
-    // }
-
     preloadImages()
       .then(() => {
         removePreloader()
-        // animateNav()
       })
       .catch((err) => {
         console.log(err)

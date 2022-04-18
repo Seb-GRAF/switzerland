@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import LocomotiveScroll from 'locomotive-scroll'
+import React from 'react'
 
 import CityTitle from '../../../components/city-title/city-title'
 import DescriptionSection from '../../../components/description-section/description-section'
@@ -12,7 +11,7 @@ import {
 import AnimatedPage from '../../../components/animated-page/animated-page'
 
 import './style.scss'
-import useSmoothScroll from '../../../utils/useSmoothScroll'
+
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollSmoother from 'gsap/ScrollSmoother'
 import gsap from 'gsap'

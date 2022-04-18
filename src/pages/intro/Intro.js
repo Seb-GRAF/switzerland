@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import {
   DividerLarge,
   DividerSmall,
@@ -10,8 +10,6 @@ import './style.scss'
 
 import Title from '../../components/title/title'
 import AnimatedPage from '../../components/animated-page/animated-page'
-
-import useSmoothScroll from '../../utils/useSmoothScroll'
 
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'

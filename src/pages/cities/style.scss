@@ -20,4 +20,8 @@
   pointer-events: none;
   z-index: 200;
   filter: brightness(0.7);
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 }

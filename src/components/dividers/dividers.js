@@ -16,7 +16,7 @@ const DividerLarge = ({ img }) => {
   )
 }
 
-const DividerSmall = ({ img, source }) => {
+const DividerSmall = ({ img }) => {
   useEffect(() => {
     const dividers = gsap.utils.toArray('.divider__small')
 

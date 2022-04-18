@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Cities from '../cities/cities'
 import Zurich from '../cities/zurich/zurich'
@@ -8,7 +8,6 @@ import Lausanne from '../cities/lausanne/lausanne'
 import Intro from '../intro/intro'
 import './style.scss'
 import { AnimatePresence } from 'framer-motion'
-import gsap from 'gsap'
 
 const App = () => {
   const location = useLocation()
