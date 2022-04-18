@@ -33,7 +33,7 @@ const Title = ({ children, title, subtitle }) => {
           stagger: '0.1',
           duration: '2',
           ease: 'expo.inOut',
-          delay: '.8',
+          delay: '1',
         }
       )
     }

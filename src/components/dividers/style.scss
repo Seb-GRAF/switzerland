@@ -34,12 +34,8 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
-    clip-path: inset(50% 50% 50% 50%);
-    transition: clip-path 1.5s cubic-bezier(0.7, 0, 0.175, 1);
-    img {
-      width: 200%;
-      transition: width 2s ease-out;
-    }
+    clip-path: inset(100% 0% 0% 0%);
+    transition: clip-path 1s cubic-bezier(0.7, 0, 0.175, 1);
   }
 }
 

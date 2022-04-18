@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import { preloadImages } from '../../utils/preloadImages'
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
+import useSmoothScroll from '../../utils/useSmoothScroll'
 
 gsap.registerPlugin(SplitText)
 
@@ -18,11 +19,10 @@ const animation = {
 }
 
 const AnimatedPage = ({ children }) => {
+  useSmoothScroll()
   useEffect(() => {
-    console.log('used effect')
-    const preloader = document.querySelector('.preloader')
-
     const removePreloader = () => {
+      const preloader = document.querySelector('.preloader')
       gsap.to(preloader, {
         clipPath: 'inset(0% 0% 110% 0%)',
         duration: 2,
@@ -32,26 +32,24 @@ const AnimatedPage = ({ children }) => {
       preloader.style.pointerEvents = 'none'
     }
 
-    const animateNav = () => {
-      gsap.from('nav', {
-        y: '-100%',
-        opacity: 0,
-        duration: 2,
-        ease: 'expo',
-        delay: 1.8,
-      })
-    }
+    // const animateNav = () => {
+    //   gsap.from('nav', {
+    //     y: '-100%',
+    //     opacity: 0,
+    //     duration: 2,
+    //     ease: 'expo',
+    //     delay: 1,
+    //   })
+    // }
 
     preloadImages()
       .then(() => {
         removePreloader()
-        animateNav()
+        // animateNav()
       })
       .catch((err) => {
         console.log(err)
       })
-
-    return () => {}
   }, [])
 
   return (

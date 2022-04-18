@@ -39,8 +39,6 @@ h2 {
   background-color: #1f2329;
   z-index: 99999;
   cursor: wait;
-  // opacity: 0;
-  // pointer-events: none;
 }
 img {
   object-fit: cover;
@@ -54,4 +52,8 @@ img {
 
 .scroll__wrapper {
   background-color: white;
+}
+
+.scroll__container {
+  will-change: transform;
 }

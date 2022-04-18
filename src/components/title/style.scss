@@ -14,6 +14,7 @@
 
   .text__wrapper {
     overflow: hidden;
+    z-index: 210;
     h1,
     h2 {
       display: flex;
@@ -37,18 +38,27 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+
     a {
       position: relative;
       text-decoration: none;
       width: 12rem;
       text-align: center;
       overflow: hidden;
+      z-index: 210;
     }
     h2 {
       font-weight: 200;
       color: #cdc9bd;
       font-size: clamp(1.5rem, 6vw, 2.5rem);
       z-index: 1;
+      will-change: font-weight;
+      transition: color 300ms ease-out, font-weight 300ms ease-out;
+
+      &:hover {
+        font-weight: 500;
+        color: white;
+      }
     }
   }
 }

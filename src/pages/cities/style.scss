@@ -9,3 +9,15 @@
     }
   }
 }
+
+.cursor__follow {
+  position: absolute;
+  width: 22rem;
+  height: 22rem;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 200;
+  filter: brightness(0.7);
+}

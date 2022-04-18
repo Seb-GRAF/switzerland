@@ -14,8 +14,6 @@ import './style.scss'
 import useSmoothScroll from '../../../utils/useSmoothScroll'
 
 const Zurich = () => {
-  useSmoothScroll()
-
   return (
     <AnimatedPage>
       <section className="zurich" data-scroll-section>

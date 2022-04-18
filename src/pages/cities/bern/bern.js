@@ -14,8 +14,6 @@ import './style.scss'
 import useSmoothScroll from '../../../utils/useSmoothScroll'
 
 const Bern = () => {
-  useSmoothScroll()
-
   return (
     <AnimatedPage>
       <section className="bern" data-scroll-section>

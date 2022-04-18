@@ -6,7 +6,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import { preloadImages } from './preloadImages'
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger)
 
-export default function useSmoothScroll(paused = false) {
+export default function useSmoothScroll() {
   const [nav, setNav] = useState(true)
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function useSmoothScroll(paused = false) {
           ease: 'expo',
           ignoreMobileResize: true,
         })
-        smoother.effects('img', { speed: 0.7 })
+        smoother.effects('img', { speed: 0.8 })
         smoother.scrollTo(0)
 
         window.addEventListener('scroll', () => {
@@ -38,13 +38,7 @@ export default function useSmoothScroll(paused = false) {
         console.log(err)
       })
 
-    if (paused) {
-      document.querySelector('html').style.overflow = 'hidden'
-    }
     return () => {
-      if (paused) {
-        document.querySelector('html').style.overflow = 'visible'
-      }
       ScrollSmoother.get().kill()
     }
   }, [])

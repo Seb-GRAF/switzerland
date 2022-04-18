@@ -15,50 +15,10 @@ import useSmoothScroll from '../../utils/useSmoothScroll'
 
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
-import { preloadImages } from '../../utils/preloadImages'
 
 gsap.registerPlugin(SplitText)
 
 const Intro = () => {
-  useSmoothScroll()
-  // useEffect(() => {
-  //   const title = document.querySelector('.title')
-
-  //   const animate = () => {
-  //     gsap.from(
-  //       new SplitText(title.querySelectorAll('h1'), {
-  //         type: 'chars',
-  //       }).chars,
-  //       {
-  //         y: '100%',
-  //         stagger: '0.07',
-  //         duration: '2',
-  //         ease: 'expo.inOut',
-  //         // delay: '.2',
-  //       }
-  //     )
-  //     gsap.from(
-  //       new SplitText(title.querySelectorAll('h2'), {
-  //         type: 'words',
-  //       }).words,
-  //       {
-  //         y: '100%',
-  //         stagger: '0.1',
-  //         duration: '2',
-  //         ease: 'expo.inOut',
-  //         delay: '.8',
-  //       }
-  //     )
-  //   }
-
-  //   preloadImages()
-  //     .then(() => {
-  //       animate()
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })
-  // }, [])
   return (
     <AnimatedPage>
       <section className="intro" data-scroll-section>

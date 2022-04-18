@@ -20,8 +20,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(SplitText, ScrollTrigger)
 
 const Lausanne = () => {
-  useSmoothScroll()
-
   // useEffect(() => {
   //   const dividers = gsap.utils.toArray('.text__divider')
 
@@ -45,7 +43,7 @@ const Lausanne = () => {
 
   return (
     <AnimatedPage>
-      <section className="lausanne" data-scroll-section>
+      <section className="lausanne">
         <CityTitle
           city="LAUSANNE"
           img={require('../../../assets/cities/ls/1.jpg')}
