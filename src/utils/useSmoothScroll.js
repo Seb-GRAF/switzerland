@@ -22,8 +22,8 @@ export default function useSmoothScroll() {
         smooth: 0.5,
         effects: true,
         ease: 'expo',
-        // ignoreMobileResize: true,
-        normalizeScroll: true,
+        ignoreMobileResize: true,
+        // normalizeScroll: true,
       })
       smoother.effects('img', { speed: 0.8 })
       smoother.scrollTo(0)
