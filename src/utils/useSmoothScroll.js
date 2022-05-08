@@ -39,6 +39,21 @@ export default function useSmoothScroll() {
           if (velocity >= 0.1 && nav) setNav(false)
           else setNav(true)
         })
+
+        // add opacity animation for mobile devices (prevents flicker bug)
+        if (window.innerWidth < 768) {
+          document.querySelectorAll('img').forEach((img) => {
+            gsap.from(img, {
+              scrollTrigger: {
+                trigger: img,
+                start: 'top bottom',
+              },
+              opacity: 0,
+              duration: 1,
+              ease: 'expo.inOut',
+            })
+          })
+        }
       })
       .catch((err) => {
         console.log(err)
