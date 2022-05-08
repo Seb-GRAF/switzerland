@@ -13,12 +13,12 @@ const Cities = () => {
 
   useEffect(() => {
     // cursor follower
-    gsap.set('.cursor__follow', { xPercent: -50, yPercent: -50 })
-    let xTo = gsap.quickTo('.cursor__follow', 'x', {
+    gsap.set('.cursor-follow', { xPercent: -50, yPercent: -50 })
+    let xTo = gsap.quickTo('.cursor-follow', 'x', {
         duration: 1,
         ease: 'power3',
       }),
-      yTo = gsap.quickTo('.cursor__follow', 'y', {
+      yTo = gsap.quickTo('.cursor-follow', 'y', {
         duration: 1,
         ease: 'power3',
       })
@@ -28,25 +28,48 @@ const Cities = () => {
       yTo(e.clientY)
     })
 
-    document.querySelectorAll('h2').forEach((link) => {
-      link.addEventListener('mouseenter', () => {
+    let links = document.querySelectorAll('h2')
+    links.forEach((link) => {
+      link.addEventListener('mouseenter', (e) => {
         setCity(link.id)
-        gsap.to('.cursor__follow', {
+        gsap.set('.cursor-follow', {
           rotate: `${Math.floor(Math.random() * 30) - 15}deg`,
-
-          duration: 0,
         })
-        gsap.to('.cursor__follow', {
+
+        gsap.to('.cursor-follow', {
           opacity: 1,
           ease: 'power2',
           duration: 0.5,
         })
+
+        links.forEach((link) => {
+          if (link.id !== e.target.id) {
+            gsap.to(link, {
+              opacity: 0.3,
+              duration: 0.5,
+              color: '#cdc9bd',
+            })
+          } else {
+            gsap.to(e.target, {
+              opacity: 1,
+              duration: 0.5,
+              color: '#fff',
+            })
+          }
+        })
       })
 
       link.addEventListener('mouseleave', () => {
-        gsap.to('.cursor__follow', {
+        gsap.to('.cursor-follow', {
           opacity: 0,
           ease: 'power2',
+          duration: 0.5,
+        })
+
+        gsap.to(links, {
+          opacity: 1,
+          color: '#cdc9bd',
+
           duration: 0.5,
         })
       })
@@ -64,11 +87,36 @@ const Cities = () => {
       <section className="cities">
         <Title title="cities">
           <div className="cities__list">
-            <img
-              className="cursor__follow"
-              src={require(`../../assets/cities/${city}/miniature.jpg`)}
-              alt="city"
-            ></img>
+            <div className="cursor-follow">
+              <img
+                className={`cursor-follow__img cursor-follow__img--zrh ${
+                  city === 'zrh' ? 'active' : ''
+                }`}
+                src={require(`../../assets/cities/zrh/miniature.jpg`)}
+                alt="zurich"
+              ></img>
+              <img
+                className={`cursor-follow__img cursor-follow__img--gva ${
+                  city === 'gva' ? 'active' : ''
+                }`}
+                src={require(`../../assets/cities/gva/miniature.jpg`)}
+                alt="geneva"
+              ></img>
+              <img
+                className={`cursor-follow__img cursor-follow__img--bern ${
+                  city === 'bern' ? 'active' : ''
+                }`}
+                src={require(`../../assets/cities/bern/miniature.jpg`)}
+                alt="bern"
+              ></img>
+              <img
+                className={`cursor-follow__img cursor-follow__img--ls ${
+                  city === 'ls' ? 'active' : ''
+                }`}
+                src={require(`../../assets/cities/ls/miniature.jpg`)}
+                alt="lausanne"
+              ></img>
+            </div>
 
             <Link to="/cities/zurich">
               <h2 id="zrh">Zurich</h2>

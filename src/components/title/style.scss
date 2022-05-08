@@ -54,11 +54,6 @@
       z-index: 1;
       will-change: font-weight;
       transition: color 300ms ease-out, font-weight 300ms ease-out;
-
-      &:hover {
-        font-weight: 500;
-        color: white;
-      }
     }
   }
 }

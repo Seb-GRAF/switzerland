@@ -10,7 +10,7 @@
   }
 }
 
-.cursor__follow {
+.cursor-follow {
   position: absolute;
   width: 22rem;
   height: 22rem;
@@ -23,5 +23,18 @@
 
   @media screen and (max-width: 800px) {
     display: none;
+  }
+}
+
+.cursor-follow__img {
+  position: fixed;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  top: -30%;
+  left: 0;
+
+  &.active {
+    visibility: visible;
   }
 }
